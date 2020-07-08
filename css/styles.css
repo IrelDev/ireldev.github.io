@@ -22,7 +22,10 @@ body {
 
 .card-body {
     height: 240pt;
-    margin-top: -20px;
+    margin-top: -25px;
+}
+.description {
+  height: 30pt;
 }
 .footer-margin {
   height: 240pt;
