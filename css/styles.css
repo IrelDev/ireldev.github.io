@@ -1,25 +1,20 @@
 body {
   padding-top: 54px;
 }
-
 @media (min-width: 992px) {
   body {
     padding-top: 56px;
   }
 }
-
 .portfolio-item {
   margin-bottom: 30px;
 }
-
 .pagination {
   margin-bottom: 30px;
 }
-
 .navbar {
     background-color: rgb(72, 72, 74);
 }
-
 .card-body {
     height: 240pt;
     margin-top: -25px;
@@ -36,22 +31,18 @@ body {
 	text-align: center;
   background-color: rgb(72, 72, 74);
 }
-
 .btn-linkedin {
     background: #007bb6;
     border-color: #007bb6;
 }
-
 .btn-github {
     background: #23282D;
     border-color: #23282D;
 }
-
 .btn-email {
     background: #1DA1F2;
     border-color: #1DA1F2;
 }
-
 .link_button {
   position: absolute;
   bottom: 15pt;
@@ -59,7 +50,6 @@ body {
   left: 0;
   margin: auto;
 }
-
 .projectFilter a {
   font-size: x-large;
   margin-right: 5px;
@@ -67,11 +57,9 @@ body {
   color:#081D2E;
   text-decoration:none;
 }
-
 .projectFilter a.current {
     font-weight: bold;
 }
-
 .isotope-item {
     z-index: 2;
 }
