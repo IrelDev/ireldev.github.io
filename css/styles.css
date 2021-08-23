@@ -40,6 +40,10 @@ body {
     background: #1DA1F2;
     border-color: #1DA1F2;
 }
+.btn-social {
+    background: #393E41;
+    border-color: #393E41;
+}
 .link_button {
   position: absolute;
   bottom: 15pt;
@@ -50,6 +54,8 @@ body {
 .contactImage {
   width: 20px;
   height: 20px;
+  padding-bottom: 4px;
+  margin-right: 5px;
 }
 .projectFilter a {
   font-size: x-large;
