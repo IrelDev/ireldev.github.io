@@ -1,0 +1,25 @@
+.contact-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.contact-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-body__group{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 90%;
+    text-align: center;
+}
+
+@media (min-width: 1110px) {
+    .contact-body__group {
+        width: 1110px;
+    }
+}
