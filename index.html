@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
     <meta name="author" content="Kirill Pustovalov">
     <meta name="description" content="Kirill Pustovalov — Senior iOS Software Engineer with 6+ years building performant, reliable, and scalable Apple apps. Award-winning SPM modularization, UIKit→SwiftUI migration, and FinTech trading platforms.">
     <meta name="theme-color" content="#fbfbfd">
@@ -81,7 +81,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+        html { scroll-behavior: smooth; scroll-padding-top: calc(76px + env(safe-area-inset-top, 0px)); -webkit-text-size-adjust: 100%; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, "Helvetica Neue", Arial, sans-serif;
@@ -128,9 +128,11 @@
             -webkit-backdrop-filter: saturate(180%) blur(20px);
             border-bottom: 1px solid var(--border);
             transition: background 0.4s ease, border-color 0.4s ease;
+            padding-top: env(safe-area-inset-top, 0px);
         }
         .nav-inner {
-            max-width: var(--maxw); margin: 0 auto; padding: 0 24px;
+            max-width: var(--maxw); margin: 0 auto;
+            padding: 0 max(24px, env(safe-area-inset-left)) 0 max(24px, env(safe-area-inset-right));
             height: 60px; display: flex; align-items: center; justify-content: space-between;
         }
         .brand {
@@ -174,7 +176,7 @@
 
         @media (max-width: 860px) {
             .nav-links {
-                position: fixed; top: 60px; left: 0; right: 0;
+                position: fixed; top: calc(60px + env(safe-area-inset-top, 0px)); left: 0; right: 0;
                 background: var(--nav-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
                 flex-direction: column; align-items: stretch; gap: 2px; padding: 12px 24px 20px;
                 border-bottom: 1px solid var(--border);
