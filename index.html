@@ -1,603 +1,818 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-		  	function gtag(){dataLayer.push(arguments);}
-		  	gtag('js', new Date());
-		  	gtag('config', 'UA-110543961-1');
-		</script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Kirill Pustovalov">
+    <meta name="description" content="Kirill Pustovalov — Senior iOS Software Engineer with 6+ years building performant, reliable, and scalable Apple apps. Award-winning SPM modularization, UIKit→SwiftUI migration, and FinTech trading platforms.">
+    <meta name="theme-color" content="#fbfbfd">
 
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="author" content="Kirill Pustovalov">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
-		<meta name="theme-color" content="#ffffff">
+    <title>Kirill Pustovalov — Senior iOS Software Engineer</title>
 
-		<title>Kirill Pustovalov - Portfolio</title>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kirill Pustovalov — Senior iOS Software Engineer">
+    <meta property="og:description" content="6+ years building performant, reliable, scalable iOS apps. Award-winning SPM modularization, SwiftUI migration, FinTech trading platforms.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kirillpustovalov.dev">
 
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/styles.css" rel="stylesheet">
-		<link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-		<link rel="manifest" href="favicons/manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/manifest.json">
 
-		<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
-		<script src="js/jquery.isotope.js" type="text/javascript"></script>
-		<script src="js/filter.js" type="text/javascript"></script>
-		<script src="js/bootstrap.bundle.min.js"></script>
-	</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-			<div class="container">
-		  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-		  		</button>
-				<div class="collapse navbar-collapse" id="navbarResponsive">
-			  		<ul class="navbar-nav ml-auto">
-						<li class="nav-item active">
-				  			<a class="nav-link" href="#">Portfolio</a>
-						</li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="experience.html">Experience</a>
-                        </li>
-                        <li class="nav-item">
-                              <a class="nav-link" href="education.html">Education</a>
-                        </li>
-						<li class="nav-item">
-				  			<a class="nav-link" href="contact.html">Contact</a>
-						</li>
-			  		</ul>
-				</div>
-		  	</div>
-	  	</nav>
+    <script>
+        // Apply saved theme before paint to avoid flash
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
 
-		<div class="container">
-			<h1 class="my-4"> Kirill Pustovalov
-				<small>Portfolio</small>
-			</h1>
+    <style>
+        :root {
+            --bg: #fbfbfd;
+            --bg-elevated: #ffffff;
+            --surface: #ffffff;
+            --surface-2: #f5f5f7;
+            --text: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --text-tertiary: #86868b;
+            --border: rgba(0, 0, 0, 0.08);
+            --border-strong: rgba(0, 0, 0, 0.14);
+            --accent: #0071e3;
+            --accent-hover: #0077ed;
+            --accent-soft: rgba(0, 113, 227, 0.1);
+            --nav-bg: rgba(251, 251, 253, 0.72);
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 12px 32px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.10), 0 24px 64px rgba(0, 0, 0, 0.12);
+            --grad: linear-gradient(135deg, #0071e3 0%, #42a1ff 50%, #9b6bff 100%);
+            --grad-warm: linear-gradient(135deg, #ff7a59 0%, #ff5e87 100%);
+            --radius: 22px;
+            --radius-sm: 14px;
+            --maxw: 1080px;
+        }
 
-			<h4>Enterprise & Side Projects</h4><br>
+        [data-theme="dark"] {
+            --bg: #000000;
+            --bg-elevated: #0a0a0c;
+            --surface: #161618;
+            --surface-2: #1c1c1f;
+            --text: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --text-tertiary: #86868b;
+            --border: rgba(255, 255, 255, 0.10);
+            --border-strong: rgba(255, 255, 255, 0.18);
+            --accent: #2997ff;
+            --accent-hover: #47a6ff;
+            --accent-soft: rgba(41, 151, 255, 0.14);
+            --nav-bg: rgba(10, 10, 12, 0.66);
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.35);
+            --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.4), 0 12px 40px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5), 0 28px 72px rgba(0, 0, 0, 0.6);
+        }
 
-			<div class="projectFilter">
-				<center>
-					<a href="#" filter="*" class="current">All</a>
-					<a href="#" filter=".app">Apps</a>
-                    <a href="#" filter=".ent">Enterprise</a>
-					<a href="#" filter=".ut">Utilities</a>
-					<a href="#" filter=".dep">Dependencies</a>
-					<a href="#" filter=".swiftui">SwiftUI</a>
-					<a href="#" filter=".uikit">UIKit</a>
-				</center>
-			</div>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-			<br>
+        html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
 
-			<div class="row"><div class="projectContainer"></div></div>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            letter-spacing: -0.011em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+        }
 
-			<div class="projectContainer row">
-                <div class="app ent swiftui col-lg-4 col-md-5 col-sm-12 portfolio-item">
-                    <div class="card h-100">
-                        <a href="https://www.lpl.com">
-                            <img class="card-img-top" src="images/icons/LPLAccountViewLogo.png" alt="LPL Financial">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <center>
-                                    <h4 class="card-title">LPL Financial</h4>
-                                </center>
-                            </h4>
-                            <center>
-                                <p><b>Account View</b> is a simple and convenient way to connect to your financial accounts.</p>
-                            </center>
-                            <div class="align-items-center d-flex", style="height: 40%">
-                            <ul style="list-style-type:square;">
-                                <li>MVVM</li>
-                                <li>SwiftUI</li>
-                                <li>async/await</li>
-                            </ul>
+        a { color: var(--accent); text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: var(--accent-hover); }
+
+        .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+        section { padding: 96px 0; position: relative; }
+        @media (max-width: 720px) { section { padding: 64px 0; } }
+
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 13px; font-weight: 600; letter-spacing: 0.02em;
+            text-transform: uppercase; color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .eyebrow::before {
+            content: ""; width: 22px; height: 2px; border-radius: 2px;
+            background: var(--accent);
+        }
+
+        h2.section-title {
+            font-size: clamp(28px, 4vw, 44px); font-weight: 700;
+            letter-spacing: -0.02em; line-height: 1.08; margin-bottom: 14px;
+        }
+        .section-sub { color: var(--text-secondary); font-size: 18px; max-width: 620px; margin-bottom: 48px; }
+
+        /* ===== NAV ===== */
+        nav.topbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: background 0.4s ease, border-color 0.4s ease;
+        }
+        .nav-inner {
+            max-width: var(--maxw); margin: 0 auto; padding: 0 24px;
+            height: 60px; display: flex; align-items: center; justify-content: space-between;
+        }
+        .brand {
+            font-weight: 700; font-size: 17px; letter-spacing: -0.02em; color: var(--text);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .brand .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--grad); }
+        .nav-links { display: flex; align-items: center; gap: 4px; }
+        .nav-links a {
+            color: var(--text-secondary); font-size: 14px; font-weight: 500;
+            padding: 8px 12px; border-radius: 10px; transition: color 0.2s, background 0.2s;
+        }
+        .nav-links a:hover { color: var(--text); background: var(--surface-2); }
+        .nav-actions { display: flex; align-items: center; gap: 10px; }
+
+        .theme-toggle {
+            width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border-strong);
+            background: var(--surface); color: var(--text); cursor: pointer;
+            display: grid; place-items: center; transition: all 0.2s ease;
+        }
+        .theme-toggle:hover { background: var(--surface-2); transform: translateY(-1px); }
+        .theme-toggle svg { width: 18px; height: 18px; }
+        .theme-toggle .moon { display: none; }
+        [data-theme="dark"] .theme-toggle .sun { display: none; }
+        [data-theme="dark"] .theme-toggle .moon { display: block; }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            font-size: 14px; font-weight: 600; padding: 10px 18px; border-radius: 980px;
+            border: 1px solid transparent; cursor: pointer; transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-primary:hover { background: var(--accent-hover); color: #fff; transform: translateY(-1px); box-shadow: 0 6px 18px var(--accent-soft); }
+        .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border-strong); }
+        .btn-ghost:hover { background: var(--surface-2); color: var(--text); transform: translateY(-1px); }
+        .btn svg { width: 16px; height: 16px; }
+
+        .nav-toggle { display: none; width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border-strong); background: var(--surface); cursor: pointer; }
+        .nav-toggle span { display: block; width: 16px; height: 1.6px; background: var(--text); margin: 3px auto; transition: 0.3s; }
+
+        @media (max-width: 860px) {
+            .nav-links {
+                position: fixed; top: 60px; left: 0; right: 0;
+                background: var(--nav-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+                flex-direction: column; align-items: stretch; gap: 2px; padding: 12px 24px 20px;
+                border-bottom: 1px solid var(--border);
+                transform: translateY(-120%); opacity: 0; pointer-events: none; transition: all 0.3s ease;
+            }
+            .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+            .nav-links a { padding: 12px; font-size: 16px; }
+            .nav-toggle { display: block; }
+            .nav-actions .btn.resume-btn { display: none; }
+        }
+
+        /* ===== HERO ===== */
+        .hero { padding-top: 150px; padding-bottom: 72px; position: relative; overflow: hidden; }
+        .hero::before {
+            content: ""; position: absolute; top: -120px; right: -10%;
+            width: 620px; height: 620px; border-radius: 50%;
+            background: radial-gradient(circle at center, rgba(0,113,227,0.16), transparent 62%);
+            filter: blur(20px); z-index: 0; pointer-events: none;
+        }
+        .hero::after {
+            content: ""; position: absolute; bottom: -180px; left: -8%;
+            width: 540px; height: 540px; border-radius: 50%;
+            background: radial-gradient(circle at center, rgba(155,107,255,0.13), transparent 62%);
+            filter: blur(20px); z-index: 0; pointer-events: none;
+        }
+        .hero .wrap { position: relative; z-index: 1; }
+        .avatar {
+            width: 92px; height: 92px; border-radius: 26px; background: var(--grad);
+            display: grid; place-items: center; color: #fff; font-size: 34px; font-weight: 700;
+            letter-spacing: -0.02em; box-shadow: var(--shadow-md); margin-bottom: 28px;
+        }
+        .status-chip {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--surface); border: 1px solid var(--border);
+            padding: 6px 14px; border-radius: 980px; font-size: 13px; font-weight: 500;
+            color: var(--text-secondary); margin-bottom: 22px; box-shadow: var(--shadow-sm);
+        }
+        .status-chip .pulse { width: 8px; height: 8px; border-radius: 50%; background: #34c759; box-shadow: 0 0 0 0 rgba(52,199,89,0.5); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(52,199,89,0.5);} 70% { box-shadow: 0 0 0 8px rgba(52,199,89,0);} 100% { box-shadow: 0 0 0 0 rgba(52,199,89,0);} }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 76px); font-weight: 800; line-height: 1.02;
+            letter-spacing: -0.03em; margin-bottom: 18px;
+        }
+        .hero h1 .grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero .role { font-size: clamp(19px, 2.6vw, 24px); font-weight: 600; color: var(--text); margin-bottom: 18px; }
+        .hero .lead { font-size: 19px; color: var(--text-secondary); max-width: 660px; margin-bottom: 30px; }
+        .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+        .hero-meta { display: flex; flex-wrap: wrap; gap: 18px; color: var(--text-tertiary); font-size: 14px; margin-top: 14px; }
+        .hero-meta span { display: inline-flex; align-items: center; gap: 7px; }
+        .hero-meta svg { width: 15px; height: 15px; opacity: 0.8; }
+
+        /* ===== STATS ===== */
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 56px; }
+        @media (max-width: 860px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+        .stat {
+            background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+            padding: 22px; box-shadow: var(--shadow-sm); transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .stat:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+        .stat .num { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
+        .stat .label { font-size: 13.5px; color: var(--text-secondary); margin-top: 8px; }
+
+        /* ===== EXPERIENCE TIMELINE ===== */
+        .timeline { position: relative; }
+        .xp-card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 30px; margin-bottom: 22px; box-shadow: var(--shadow-sm);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .xp-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--border-strong); }
+        .xp-head { display: flex; align-items: flex-start; gap: 18px; flex-wrap: wrap; }
+        .logo-badge {
+            width: 56px; height: 56px; border-radius: 16px; flex-shrink: 0;
+            display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 22px;
+            box-shadow: var(--shadow-sm);
+        }
+        .xp-headtext { flex: 1; min-width: 200px; }
+        .xp-company { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; }
+        .xp-role { color: var(--accent); font-weight: 600; font-size: 15px; margin-top: 2px; }
+        .xp-meta { text-align: right; color: var(--text-tertiary); font-size: 13.5px; line-height: 1.7; }
+        @media (max-width: 620px) { .xp-meta { text-align: left; width: 100%; } }
+        .xp-meta .when { font-weight: 600; color: var(--text-secondary); display: block; }
+        .xp-bullets { list-style: none; margin-top: 20px; display: grid; gap: 12px; }
+        .xp-bullets li { position: relative; padding-left: 26px; color: var(--text-secondary); font-size: 15.5px; line-height: 1.55; }
+        .xp-bullets li::before {
+            content: ""; position: absolute; left: 4px; top: 9px; width: 7px; height: 7px;
+            border-radius: 50%; background: var(--accent); opacity: 0.85;
+        }
+        .award {
+            display: inline-flex; align-items: center; gap: 7px; margin-top: 16px;
+            background: linear-gradient(135deg, rgba(255,196,0,0.16), rgba(255,138,0,0.12));
+            border: 1px solid rgba(255,170,0,0.35); color: #b8860b;
+            padding: 7px 14px; border-radius: 980px; font-size: 13px; font-weight: 600;
+        }
+        [data-theme="dark"] .award { color: #ffd479; }
+
+        /* ===== SKILLS ===== */
+        .skill-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+        @media (max-width: 720px) { .skill-grid { grid-template-columns: 1fr; } }
+        .skill-group {
+            background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 26px; box-shadow: var(--shadow-sm); transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .skill-group:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+        .skill-group h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .skill-group .ico { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); }
+        .skill-group .ico svg { width: 17px; height: 17px; }
+        .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+        .chip {
+            background: var(--surface-2); border: 1px solid var(--border); color: var(--text);
+            padding: 7px 13px; border-radius: 980px; font-size: 13.5px; font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+        /* ===== PROJECTS ===== */
+        .filters { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 36px; }
+        .filter-pill {
+            background: var(--surface); border: 1px solid var(--border-strong); color: var(--text-secondary);
+            padding: 8px 16px; border-radius: 980px; font-size: 14px; font-weight: 500; cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .filter-pill:hover { color: var(--text); transform: translateY(-1px); }
+        .filter-pill.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+        .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @media (max-width: 900px) { .proj-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 560px) { .proj-grid { grid-template-columns: 1fr; } }
+        .proj-card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 22px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        }
+        .proj-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--border-strong); }
+        .proj-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+        .proj-icon { width: 52px; height: 52px; border-radius: 13px; object-fit: cover; box-shadow: var(--shadow-sm); background: var(--surface-2); }
+        .proj-title { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+        .proj-badge { font-size: 11px; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.04em; }
+        .proj-desc { color: var(--text-secondary); font-size: 14.5px; line-height: 1.5; flex: 1; margin-bottom: 16px; }
+        .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+        .proj-tags span { font-size: 12px; color: var(--text-tertiary); background: var(--surface-2); padding: 4px 9px; border-radius: 7px; }
+        .proj-link { font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-top: auto; }
+        .proj-link svg { width: 14px; height: 14px; transition: transform 0.2s; }
+        .proj-card:hover .proj-link svg { transform: translate(2px, -2px); }
+        .deprecated { color: #ff453a; font-weight: 700; }
+
+        /* ===== EDUCATION ===== */
+        .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 800px) { .edu-grid { grid-template-columns: 1fr; } }
+        .edu-card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 26px; box-shadow: var(--shadow-sm); transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .edu-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+        .edu-card .yr { font-size: 13px; font-weight: 600; color: var(--accent); }
+        .edu-card h3 { font-size: 18px; font-weight: 700; margin: 6px 0 4px; letter-spacing: -0.01em; }
+        .edu-card .place { font-size: 14px; color: var(--text-tertiary); margin-bottom: 12px; }
+        .edu-card p { font-size: 14.5px; color: var(--text-secondary); line-height: 1.5; }
+        .doc-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; font-size: 13.5px; font-weight: 600; }
+        .doc-link svg { width: 14px; height: 14px; transition: transform 0.2s; }
+        .edu-card:hover .doc-link svg { transform: translate(2px, -2px); }
+
+        .cert-section h3.sub { font-size: 18px; font-weight: 700; margin: 44px 0 20px; }
+        .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        @media (max-width: 800px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 520px) { .cert-grid { grid-template-columns: 1fr; } }
+        .cert {
+            background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+            padding: 18px 20px; box-shadow: var(--shadow-sm); display: flex; gap: 14px; align-items: flex-start;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cert:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .cert .ci { width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 13px; }
+        .cert .ct { font-size: 14.5px; font-weight: 600; line-height: 1.3; }
+        .cert .cm { font-size: 12.5px; color: var(--text-tertiary); margin-top: 3px; }
+
+        /* ===== CONTACT ===== */
+        .contact-card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 28px;
+            padding: 52px; text-align: center; box-shadow: var(--shadow-md); position: relative; overflow: hidden;
+        }
+        .contact-card::before {
+            content: ""; position: absolute; inset: 0; z-index: 0;
+            background: radial-gradient(circle at 30% 0%, var(--accent-soft), transparent 55%);
+            pointer-events: none;
+        }
+        .contact-card > * { position: relative; z-index: 1; }
+        .contact-card h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; }
+        .contact-card p { color: var(--text-secondary); font-size: 18px; max-width: 480px; margin: 0 auto 30px; }
+        .contact-primary { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 32px; }
+        .socials { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .social-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--surface-2); border: 1px solid var(--border); color: var(--text);
+            padding: 9px 16px; border-radius: 980px; font-size: 14px; font-weight: 500; transition: all 0.2s ease;
+        }
+        .social-btn:hover { color: var(--text); border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+        .social-btn img { width: 17px; height: 17px; }
+        [data-theme="dark"] .social-btn img { filter: invert(1) brightness(1.6); }
+
+        /* ===== FOOTER ===== */
+        footer { border-top: 1px solid var(--border); padding: 36px 0; }
+        .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; color: var(--text-tertiary); font-size: 13.5px; }
+        .foot-inner a { color: var(--text-secondary); }
+
+        /* ===== REVEAL ANIMATION ===== */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+        .reveal.in { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+        .hide { display: none !important; }
+    </style>
+</head>
+
+<body>
+    <!-- ===== NAV ===== -->
+    <nav class="topbar">
+        <div class="nav-inner">
+            <a href="#top" class="brand"><span class="dot"></span>Kirill Pustovalov</a>
+            <div class="nav-links" id="navLinks">
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <a class="btn btn-primary resume-btn" href="images/documents/UOPEOPLE Degree.pdf" style="display:none">Resume</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8l1.8-1.8M18 6l1.8-1.8"/></svg>
+                    <svg class="moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero" id="top">
+        <div class="wrap">
+            <div class="avatar reveal">KP</div>
+            <div class="status-chip reveal"><span class="pulse"></span> Open to Senior iOS roles · relocating within the U.S.</div>
+            <h1 class="reveal">Kirill Pustovalov</h1>
+            <p class="role reveal">Senior iOS Software Engineer</p>
+            <p class="lead reveal">6 years of experience focused on performance, reliability, and scalable architecture. Drove an award-winning SPM modularization initiative, UIKit to SwiftUI migration, and compile-time DI adoption. Built an in-house trading platform at a major investment broker, delivering 86% faster trading chart rendering and eliminating third-party licensing fees.</p>
+            <div class="hero-cta reveal">
+                <a class="btn btn-primary" href="mailto:kpustovalov.main@gmail.com">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                    Get in touch
+                </a>
+                <a class="btn btn-ghost" href="https://www.linkedin.com/in/pustovalov-dev" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.2 8h4.6v14H.2V8zm7.4 0h4.4v1.9h.06c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.4 3 5.4 6.9V22h-4.6v-6.6c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5V22H7.6V8z"/></svg>
+                    LinkedIn
+                </a>
+                <a class="btn btn-ghost" href="https://github.com/ireldev" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+                    GitHub
+                </a>
+            </div>
+            <div class="hero-meta reveal">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Charlotte, NC</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> U.S. Permanent Resident</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg> Available now</span>
+            </div>
+
+            <div class="stats">
+                <div class="stat reveal"><div class="num">6</div><div class="label">Years of iOS engineering</div></div>
+                <div class="stat reveal"><div class="num">86%</div><div class="label">Faster trading chart rendering</div></div>
+                <div class="stat reveal"><div class="num">Gold</div><div class="label">2026 Stevie® · American Business Awards</div></div>
+                <div class="stat reveal"><div class="num">2.8→4.0+</div><div class="label">App Store rating in 2 months</div></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience">
+        <div class="wrap">
+            <div class="eyebrow reveal">Experience</div>
+            <h2 class="section-title reveal">Where I've made an impact.</h2>
+            <p class="section-sub reveal">Six years across enterprise finance, climate tech, and consumer apps.</p>
+
+            <div class="timeline">
+                <!-- LPL -->
+                <div class="xp-card reveal">
+                    <div class="xp-head">
+                        <div class="logo-badge" style="background:linear-gradient(135deg,#005587,#0091da)">L</div>
+                        <div class="xp-headtext">
+                            <div class="xp-company">LPL Financial</div>
+                            <div class="xp-role">iOS Software Engineer</div>
                         </div>
-
-                            <div class="link_button">
-                                <a href="https://apps.apple.com/us/app/lpl-account-view/id1397972267">
-                                    <center>
-                                        <img class="img-fluid rounded mb-3 mb-md-0" src="images/icons/AppStore.png" alt="AppStore" width="120" height="40">
-                                    </center>
-                                </a>
-                            </div>
-                        </div>
+                        <div class="xp-meta"><span class="when">Mar 2025 — Present</span>Fort Mill, South Carolina<br><a href="https://www.lpl.com" target="_blank" rel="noopener">lpl.com</a></div>
                     </div>
+                    <ul class="xp-bullets">
+                        <li>Drove modularization of the LPL Account View iOS app into Swift Package Manager modules, introducing type-safe, compile-time DI (Needle).</li>
+                        <li>Completed a large-scale UIKit to SwiftUI migration, modernizing architecture and improving long-term delivery velocity.</li>
+                        <li>Raised App Store rating from 2.8 to 4.0+ within 2 months by launching contextual in-app review prompts.</li>
+                        <li>Enhanced unit testing by introducing structured mocks, service interfaces, and dependency injection to boost test coverage and component isolation.</li>
+                        <li>Optimized investment positions data mapping, making the first load 60% faster and subsequent loads instantaneous.</li>
+                        <li>Built a reactive data layer using Combine to simplify data flow and reduce state-related defects.</li>
+                    </ul>
+                    <div class="award"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.7l.9-5.4L4.2 8.5l5.4-.8L12 2z"/></svg> 2026 Gold Stevie Award · American Business Awards — Best Use of Generative AI Technology</div>
                 </div>
-                
-                <div class="app ent uikit col-lg-4 col-md-5 col-sm-12 portfolio-item">
-                    <div class="card h-100">
-                        <a href="https://gara.ge">
-                            <img class="card-img-top" src="images/icons/GarageIT.png" alt="Garage IT">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <center>
-                                    <h4 class="card-title">Garage IT</h4>
-                                </center>
-                            </h4>
-                            <center>
-                                <p>International financial ecosystem & <b>investment broker.</b></p>
-                            </center>
-                            <div class="align-items-center d-flex", style="height: 40%">
-                            <ul style="list-style-type:square;">
-                                <li>Combine</li>
-                                <li>MVVM</li>
-                                <li>UIKit</li>
-                            </ul>
-                        </div>
 
-                            <div class="link_button">
-                                <a href="https://gara.ge">
-                                    <center>
-                                        <img class="img-fluid rounded mb-3 mb-md-0" src="images/icons/Website.png" alt="Website" width="120" height="40">
-                                    </center>
-                                </a>
-                            </div>
+                <!-- Garage IT -->
+                <div class="xp-card reveal">
+                    <div class="xp-head">
+                        <div class="logo-badge" style="background:linear-gradient(135deg,#ff6a3d,#ff3d77)">G</div>
+                        <div class="xp-headtext">
+                            <div class="xp-company">Garage IT</div>
+                            <div class="xp-role">iOS Software Engineer</div>
                         </div>
+                        <div class="xp-meta"><span class="when">Aug 2022 — Jan 2025</span>Tbilisi, Georgia<br><a href="https://gara.ge" target="_blank" rel="noopener">gara.ge</a></div>
                     </div>
+                    <ul class="xp-bullets">
+                        <li>Led an initiative resulting in an 86% improvement in trading chart performance across iOS and Android platforms.</li>
+                        <li>Delivered key trading platform features, including drawing tools and chart patterns.</li>
+                        <li>Implemented trading indicators using a data-driven UI approach, preserving backward compatibility and reducing app-update load.</li>
+                        <li>Encouraged monthly knowledge exchange and personal growth among the iOS community by leading conferences and meet-ups for iOS developers.</li>
+                        <li>Eliminated third-party licensing fees by launching an in-house trading platform integrated with FinTech services such as financial market investment, market analysis, education, stocks, and social trading for a multi-asset CFD broker.</li>
+                    </ul>
                 </div>
 
-                <div class="app ent uikit col-lg-4 col-md-5 col-sm-12 portfolio-item">
-                    <div class="card h-100">
-                        <a href="https://apps.apple.com/ru/app/mybox-%D1%81%D1%83%D1%88%D0%B8-%D1%80%D0%BE%D0%BB%D0%BB%D1%8B-%D0%B8-wok/id1167100370?l=en">
-                            <img class="card-img-top" src="images/icons/MYBOX.png" alt="Mybox">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <center>
-                                    <h4 class="card-title">Mybox</h4>
-                                </center>
-                            </h4>
-                            <center>
-                                <p>Food Delivery App for <b>MB-Group</b> developed at <b>Heads and Hands</b>.</p>
-                            </center>
-                            <div class="align-items-center d-flex", style="height: 40%">
-                            <ul style="list-style-type:square;">
-                                <li>Push Notifications</li>
-                                <li>node-apn</li>
-                                <li><a href="https://handh.ru/cases/Mybox">App showcase</a></li>
-                            </ul>
+                <!-- Heads & Hands -->
+                <div class="xp-card reveal">
+                    <div class="xp-head">
+                        <div class="logo-badge" style="background:linear-gradient(135deg,#7b61ff,#b06bff)">H</div>
+                        <div class="xp-headtext">
+                            <div class="xp-company">Heads &amp; Hands</div>
+                            <div class="xp-role">iOS Software Engineer</div>
                         </div>
-
-                            <div class="link_button">
-                                <a href="https://apps.apple.com/ru/app/mybox-%D1%81%D1%83%D1%88%D0%B8-%D1%80%D0%BE%D0%BB%D0%BB%D1%8B-%D0%B8-wok/id1167100370?l=en">
-                                    <center>
-                                        <img class="img-fluid rounded mb-3 mb-md-0" src="images/icons/AppStore.png" alt="AppStore" width="120" height="40">
-                                    </center>
-                                </a>
-                            </div>
-                        </div>
+                        <div class="xp-meta"><span class="when">Oct 2021 — Aug 2022</span>Saint Petersburg, Russia<br><a href="https://handh.ru" target="_blank" rel="noopener">handh.ru</a></div>
                     </div>
+                    <ul class="xp-bullets">
+                        <li>Launched a B2B climate technology app, enabling efficient resource management and real-time environmental monitoring for clients.</li>
+                        <li>Launched a Pan-Asian restaurant chain app across 90+ cities.</li>
+                        <li>Integrated Push Notifications and Apple Pay to enhance real-time user engagement and improve payment efficiency.</li>
+                    </ul>
                 </div>
-                
-                <div class="app ent uikit col-lg-4 col-md-5 col-sm-12 portfolio-item">
-                    <div class="card h-100">
-                        <a href="https://apps.apple.com/ru/app/русклимат/id1498735129">
-                            <img class="card-img-top" src="images/icons/Rusklimat.png" alt="Rusklimat">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <center>
-                                    <h4 class="card-title">Rusklimat</h4>
-                                </center>
-                            </h4>
-                            <center>
-                                <p>B2B App for <b>Rusklimat</b> developed at <b>Heads and Hands</b>.</p>
-                            </center>
-                            <div class="align-items-center d-flex", style="height: 40%">
-                            <ul style="list-style-type:square;">
-                                <li>eCommerce</li>
-                                <li>CI/CD</li>
-                                <li><a href="https://handh.ru/cases/rusklimat">App showcase</a></li>
-                            </ul>
-                        </div>
 
-                            <div class="link_button">
-                                <a href="https://apps.apple.com/ru/app/русклимат/id1498735129">
-                                    <center>
-                                        <img class="img-fluid rounded mb-3 mb-md-0" src="images/icons/AppStore.png" alt="AppStore" width="120" height="40">
-                                    </center>
-                                </a>
-                            </div>
+                <!-- Onlym -->
+                <div class="xp-card reveal">
+                    <div class="xp-head">
+                        <div class="logo-badge" style="background:linear-gradient(135deg,#0a84ff,#34c7d4)">O</div>
+                        <div class="xp-headtext">
+                            <div class="xp-company">Onlym</div>
+                            <div class="xp-role">iOS Software Engineer</div>
                         </div>
+                        <div class="xp-meta"><span class="when">Oct 2020 — Oct 2021</span>Yekaterinburg, Russia<br><a href="https://onlym.ru" target="_blank" rel="noopener">onlym.ru</a></div>
                     </div>
+                    <ul class="xp-bullets">
+                        <li>Developed and launched two iOS apps, achieving thousands of users by engineering Rewards &amp; Motivational systems and implementing responsive code-based UI for iPad and iPhone layouts.</li>
+                        <li>Engineered encryption mechanisms for the WebSocket messenger, supporting secure file, photo, voice, and text messages, ensuring data security.</li>
+                        <li>Designed a CoreData database with over 60 business entities, enabling offline mode.</li>
+                        <li>Led cross-functional teams across iOS, Android, and Backend departments.</li>
+                        <li>Developed SwiftUI widgets, allowing users to view app content on their home screens.</li>
+                    </ul>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="app ent uikit col-lg-4 col-md-5 col-sm-12 portfolio-item">
-                    <div class="card h-100">
-                        <a href="https://apps.apple.com/ru/app/gildbakaley/id1487775219">
-                            <img class="card-img-top" src="images/icons/Gildbakaley.png" alt="Gildbakaley">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <center>
-                                    <h4 class="card-title">Gildbakaley</h4>
-                                </center>
-                            </h4>
-                            <center>
-                                <p>Reward & Motivation system developed for <b>ONLYM</b>.</p>
-                            </center>
-                            <div class="align-items-center d-flex", style="height: 40%">
-                            <ul style="list-style-type:square;">
-                                <li>WidgetKit</li>
-                                <li>iPhone & iPad layout</li>
-                                <li>Starscream & MessageKit</li>
-                            </ul>
-                        </div>
-
-                            <div class="link_button">
-                                <a href="https://apps.apple.com/ru/app/gildbakaley/id1487775219">
-                                    <center>
-                                        <img class="img-fluid rounded mb-3 mb-md-0" src="images/icons/AppStore.png" alt="AppStore" width="120" height="40">
-                                    </center>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" style="background:var(--bg-elevated);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+        <div class="wrap">
+            <div class="eyebrow reveal">Skills</div>
+            <h2 class="section-title reveal">My toolkit.</h2>
+            <p class="section-sub reveal">The languages, frameworks, and practices I reach for every day.</p>
+            <div class="skill-grid">
+                <div class="skill-group reveal">
+                    <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>Languages &amp; UI</h3>
+                    <div class="chips"><span class="chip">Swift</span><span class="chip">SwiftUI</span><span class="chip">UIKit</span><span class="chip">WidgetKit</span></div>
                 </div>
-                
-                <div class="app ent uikit col-lg-4 col-md-5 col-sm-12 portfolio-item">
-                    <div class="card h-100">
-                        <a href="https://apps.apple.com/ru/app/seller-gb/id1572983812">
-                            <img class="card-img-top" src="images/icons/SELLERGB.png" alt="SELLERGB">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <center>
-                                    <h4 class="card-title">SELLER GB</h4>
-                                </center>
-                            </h4>
-                            <center>
-                                <p>Another Reward & Motivation system developed for <b>ONLYM</b>.</p>
-                            </center>
-                            <div class="align-items-center d-flex", style="height: 40%">
-                            <ul style="list-style-type:square;">
-                                <li>Danielgindi's Charts</li>
-                                <li>iPhone & iPad layout</li>
-                                <li>Starscream & MessageKit</li>
-                            </ul>
-                        </div>
-
-                            <div class="link_button">
-                                <a href="https://apps.apple.com/ru/app/seller-gb/id1572983812">
-                                    <center>
-                                        <img class="img-fluid rounded mb-3 mb-md-0" src="images/icons/AppStore.png" alt="AppStore" width="120" height="40">
-                                    </center>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="skill-group reveal">
+                    <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 9-9M21 12a9 9 0 0 1-9 9"/><path d="M16 7h5V2M8 17H3v5"/></svg></span>Concurrency &amp; Reactive</h3>
+                    <div class="chips"><span class="chip">Combine</span><span class="chip">async/await</span><span class="chip">Concurrency</span><span class="chip">RxSwift</span></div>
                 </div>
-                
-                <div class="app ut swiftui col-lg-4 col-md-5 col-sm-12 portfolio-item">
-                    <div class="card h-100">
-                        <a href="https://github.com/IrelDev/XcodeCleaner">
-                            <img class="card-img-top" src="images/icons/XcodeCleaner.png" alt="Xcode Cleaner">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <center>
-                                    <h4 class="card-title">Xcode Cleaner</h4>
-                                </center>
-                            </h4>
-                            <center>
-                                <p>Analyze and free up disk space used by Xcode cache files.</p>
-                            </center>
-                            <div class="align-items-center d-flex", style="height: 40%">
-                            <ul style="list-style-type:square">
-                                <li>SwiftUI</li>
-                                <li>MVVM</li>
-                                <li>CoreData</li>
-                                <li>Concurrency</li>
-                            </ul>
-                        </div>
-
-                            <div class="link_button">
-                                <a href="https://github.com/IrelDev/XcodeCleaner">
-                                    <center>
-                                        <img class="img-fluid rounded mb-3 mb-md-0" src="images/icons/Github.png" alt="GitHub" width="120" height="40">
-                                    </center>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="skill-group reveal">
+                    <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>Architecture</h3>
+                    <div class="chips"><span class="chip">SPM</span><span class="chip">Needle (DI)</span><span class="chip">MVVM</span><span class="chip">MVP-C</span><span class="chip">SOLID</span><span class="chip">Design Patterns</span></div>
                 </div>
-                
-                <div class="dep uikit col-lg-4 col-md-5 col-sm-12 portfolio-item">
-                    <div class="card h-100">
-                        <a href="https://github.com/IrelDev/TelegramColorPicker">
-                            <img class="card-img-top" src="images/icons/TelegramColorPicker.png" alt="Telegram Color Picker">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <center>
-                                    <h4 class="card-title">Telegram Color Picker</h4>
-                                </center>
-                            </h4>
-                            <center>
-                                <p>Telegram style color picker.</p>
-                            </center>
-                            <br>
-                            <div class="align-items-center d-flex", style="height: 40%">
-                            <ul style="list-style-type:square;">
-                                <li>UIKit</li>
-                                <li>Cocoapods</li>
-                                <li>Carthage</li>
-                                <li>Swift Package Manager</li>
-                            </ul>
-                        </div>
-
-                            <div class="link_button">
-                                <a href="https://github.com/IrelDev/TelegramColorPicker">
-                                    <center>
-                                        <img class="img-fluid rounded mb-3 mb-md-0" src="images/icons/Github.png" alt="GitHub" width="120" height="40">
-                                    </center>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="skill-group reveal">
+                    <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span>Data &amp; Networking</h3>
+                    <div class="chips"><span class="chip">Core Data</span><span class="chip">WebSockets</span><span class="chip">CommonCrypto</span><span class="chip">Firebase</span></div>
                 </div>
-                
-                <div class="dep uikit col-lg-4 col-md-5 col-sm-12 portfolio-item">
-                    <div class="card h-100">
-                        <a href="https://github.com/IrelDev/Xcode-MVP-C-Templates">
-                            <img class="card-img-top" src="images/icons/XcodeMVP-CTemplates.png" alt="Gildbakaley">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <center>
-                                    <h4 class="card-title">Xcode MVP-C Templates</h4>
-                                </center>
-                            </h4>
-                            <center>
-                                <p>A few Xcode templates to create MVP-C iOS application.</p>
-                            </center>
-                            <div class="align-items-center d-flex", style="height: 40%">
-                            <ul style="list-style-type:square;">
-                                <li>UIKit</li>
-                                <li>Base & Structure protocols</li>
-                                <li>.xctemplate</li>
-                            </ul>
-                        </div>
-
-                            <div class="link_button">
-                                <a href="https://github.com/IrelDev/Xcode-MVP-C-Templates">
-                                    <center>
-                                        <img class="img-fluid rounded mb-3 mb-md-0" src="images/icons/Github.png" alt="AppStore" width="120" height="40">
-                                    </center>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="skill-group reveal">
+                    <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span>Testing &amp; Delivery</h3>
+                    <div class="chips"><span class="chip">Unit Testing</span><span class="chip">XCTest</span><span class="chip">Git</span><span class="chip">CI/CD</span><span class="chip">Fastlane</span></div>
                 </div>
-                
-				<div class="dep uikit col-lg-4 col-md-5 col-sm-12 portfolio-item">
-					<div class="card h-100">
-						<a href="https://github.com/IrelDev/BottomSheet">
-							<img class="card-img-top" src="images/icons/BottomSheet.png" alt="Bottom Sheet">
-						</a>
-						<div class="card-body">
-							<h4 class="card-title">
-								<center>
-									<h4 class="card-title">Bottom Sheet</h4>
-								</center>
-							</h4>
-							<center>
-								<p>Provide a draggable bottom sheet that contains any view controller.</p>
-							</center>
-							<div class="align-items-center d-flex", style="height: 40%">
-							<ul style="list-style-type:square;">
-								<li>UIKit</li>
-								<li>Cocoapods</li>
-								<li>Carthage</li>
-								<li>Swift Package Manager</li>
-							</ul>
-						</div>
+                <div class="skill-group reveal">
+                    <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 9h6v6H9z"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span>AI &amp; Machine Learning</h3>
+                    <div class="chips"><span class="chip">Core ML</span><span class="chip">Create ML</span><span class="chip">Apple Intelligence</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-							<div class="link_button">
-								<a href="https://github.com/IrelDev/BottomSheet">
-									<center>
-										<img class="img-fluid rounded mb-3 mb-md-0" src="images/icons/Github.png" alt="GitHub" width="120" height="40">
-									</center>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects">
+        <div class="wrap">
+            <div class="eyebrow reveal">Portfolio</div>
+            <h2 class="section-title reveal">Selected work &amp; open source.</h2>
+            <p class="section-sub reveal">Enterprise apps, FinTech platforms, developer tools, and open-source libraries.</p>
 
-				<div class="app ut swiftui col-lg-4 col-md-5 col-sm-12 portfolio-item">
-					<div class="card h-100">
-						<a href="https://github.com/IrelDev/TabBarIconGenerator">
-							<img class="card-img-top" src="images/icons/TabBarIconGenerator.png" alt="Tab Bar Icon Generator">
-						</a>
-						<div class="card-body">
-							<h4 class="card-title">
-								<center>
-									<h4 class="card-title">Tab Bar Icon Generator</h4>
-								</center>
-							</h4>
-							<center>
-								<p>Generate custom tab bar icon imageset from a given image.</p>
-							</center>
-							<div class="align-items-center d-flex", style="height: 40%">
-							<ul style="list-style-type:square">
-								<li>SwiftUI</li>
-								<li>AppKit (NSOpenPanel)</li>
-								<li>MVP</li>
-							</ul>
-						</div>
+            <div class="filters reveal" id="filters">
+                <button class="filter-pill active" data-filter="all">All</button>
+                <button class="filter-pill" data-filter="ent">Enterprise</button>
+                <button class="filter-pill" data-filter="app">Apps</button>
+                <button class="filter-pill" data-filter="ut">Utilities</button>
+                <button class="filter-pill" data-filter="dep">Dependencies</button>
+                <button class="filter-pill" data-filter="swiftui">SwiftUI</button>
+                <button class="filter-pill" data-filter="uikit">UIKit</button>
+            </div>
 
-							<div class="link_button">
-								<a href="https://github.com/IrelDev/TabBarIconGenerator">
-									<center>
-										<img class="img-fluid rounded mb-3 mb-md-0" src="images/icons/Github.png" alt="GitHub" width="120" height="40">
-									</center>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
+            <div class="proj-grid" id="projGrid">
+                <article class="proj-card reveal" data-cat="app ent swiftui">
+                    <div class="proj-top"><img class="proj-icon" src="images/icons/LPLAccountViewLogo.png" alt="LPL Financial"><div><div class="proj-title">LPL Account View</div><div class="proj-badge">Enterprise</div></div></div>
+                    <p class="proj-desc">A simple, convenient way to connect to and monitor your financial accounts.</p>
+                    <div class="proj-tags"><span>MVVM</span><span>SwiftUI</span><span>async/await</span></div>
+                    <a class="proj-link" href="https://apps.apple.com/us/app/lpl-account-view/id1397972267" target="_blank" rel="noopener">App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </article>
 
-				<div class="app uikit col-lg-4 col-md-5 col-sm-12 portfolio-item">
-					<div class="card h-100">
-						<a href="https://github.com/IrelDev/CoronavirusStatistics">
-							<img class="card-img-top" src="images/icons/CoronavirusStatistics.png" alt="Coronavirus Statistics">
-						</a>
-						<div class="card-body">
-							<h4 class="card-title">
-								<center>
-									<h4 class="card-title">Coronavirus Statistics</h4>
-								</center>
-							</h4>
-							<center>
-								<p>Get the latest coronavirus stats tracking the number of new cases, deaths, etc.</p>
-							</center>
-							<div class="align-items-center d-flex", style="height: 40%">
-							<ul style="list-style-type:square">
-								<li>UIKit</li>
-								<li>MVC</li>
-								<li>Networking</li>
-								<li>Code based UI</li>
-							</ul>
-						</div>
+                <article class="proj-card reveal" data-cat="app ent uikit">
+                    <div class="proj-top"><img class="proj-icon" src="images/icons/GarageIT.png" alt="Garage IT"><div><div class="proj-title">Garage IT</div><div class="proj-badge">Enterprise</div></div></div>
+                    <p class="proj-desc">International financial ecosystem and multi-asset investment broker.</p>
+                    <div class="proj-tags"><span>Combine</span><span>MVVM</span><span>UIKit</span></div>
+                    <a class="proj-link" href="https://gara.ge" target="_blank" rel="noopener">Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </article>
 
-							<div class="link_button">
-								<a href="https://github.com/IrelDev/CoronavirusStatistics">
-									<center>
-										<img class="img-fluid rounded mb-3 mb-md-0" src="images/icons/Github.png" alt="GitHub" width="120" height="40">
-									</center>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
+                <article class="proj-card reveal" data-cat="app ent uikit">
+                    <div class="proj-top"><img class="proj-icon" src="images/icons/MYBOX.png" alt="Mybox"><div><div class="proj-title">Mybox</div><div class="proj-badge">Enterprise</div></div></div>
+                    <p class="proj-desc">Food delivery app for MB-Group, developed at Heads &amp; Hands.</p>
+                    <div class="proj-tags"><span>Push Notifications</span><span>node-apn</span></div>
+                    <a class="proj-link" href="https://apps.apple.com/ru/app/mybox-%D1%81%D1%83%D1%88%D0%B8-%D1%80%D0%BE%D0%BB%D0%BB%D1%8B-%D0%B8-wok/id1167100370?l=en" target="_blank" rel="noopener">App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </article>
 
-				<div class="uikit col-lg-4 col-md-5 col-sm-12 portfolio-item">
-					<div class="card h-100">
-						<a href="https://github.com/IrelDev/ProperWayToDownloadAnImage">
-							<img class="card-img-top" src="images/icons/ProperWayToDownloadAnImage.png" alt="Proper Way To Download An Image">
-						</a>
-						<div class="card-body">
-							<h4 class="card-title">
-								<center>
-									<h4 class="card-title">Proper Image Downloading</h4>
-								</center>
-							</h4>
-							<center>
-								<p>Example of proper image downloading & caching in swift using operations.</p>
-							</center>
-							<div class="align-items-center d-flex", style="height: 40%">
-							<ul style="list-style-type:square">
-								<li>UIKit</li>
-								<li>Operations</li>
-								<li>Networking</li>
-								<li>Grand Central Dispatch</li>
-							</ul>
-						</div>
+                <article class="proj-card reveal" data-cat="app ent uikit">
+                    <div class="proj-top"><img class="proj-icon" src="images/icons/Rusklimat.png" alt="Rusklimat"><div><div class="proj-title">Rusklimat</div><div class="proj-badge">Enterprise</div></div></div>
+                    <p class="proj-desc">B2B climate-technology app developed at Heads &amp; Hands.</p>
+                    <div class="proj-tags"><span>eCommerce</span><span>CI/CD</span></div>
+                    <a class="proj-link" href="https://apps.apple.com/ru/app/русклимат/id1498735129" target="_blank" rel="noopener">App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </article>
 
-							<div class="link_button">
-								<a href="https://github.com/IrelDev/ProperWayToDownloadAnImage">
-									<center>
-										<img class="img-fluid rounded mb-3 mb-md-0" src="images/icons/Github.png" alt="GitHub" width="120" height="40">
-									</center>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
+                <article class="proj-card reveal" data-cat="app ent uikit">
+                    <div class="proj-top"><img class="proj-icon" src="images/icons/Gildbakaley.png" alt="Gildbakaley"><div><div class="proj-title">Gildbakaley</div><div class="proj-badge">Enterprise</div></div></div>
+                    <p class="proj-desc">Rewards &amp; motivation system developed for ONLYM.</p>
+                    <div class="proj-tags"><span>WidgetKit</span><span>iPhone &amp; iPad</span><span>MessageKit</span></div>
+                    <a class="proj-link" href="https://apps.apple.com/ru/app/gildbakaley/id1487775219" target="_blank" rel="noopener">App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </article>
 
-				<div class="col-lg-4 col-md-5 col-sm-12 portfolio-item">
-					<div class="card h-100">
-						<a href="https://github.com/IrelDev/SwiftConcurrencyCheatSheet">
-							<img class="card-img-top" src="images/icons/SwiftConcurrencyCheatSheet.png" alt="Swift Concurrency Cheat Sheet">
-						</a>
-						<div class="card-body">
-							<h4 class="card-title">
-								<center>
-									<h4 class="card-title">Concurrency In Swift</h4>
-								</center>
-							</h4>
-							<center>
-								<p>A set of information & code snippets about concurrency in swift.</p>
-							</center>
-							<div class="align-items-center d-flex", style="height: 40%">
-							<ul style="list-style-type:square;">
-								<li>Grand Central Dispatch</li>
-								<li>Operations</li>
-								<li>Playground</li>
-								<li>PDF & Markdown</li>
-							</ul>
-						</div>
+                <article class="proj-card reveal" data-cat="app ent uikit">
+                    <div class="proj-top"><img class="proj-icon" src="images/icons/SELLERGB.png" alt="SELLER GB"><div><div class="proj-title">SELLER GB</div><div class="proj-badge">Enterprise</div></div></div>
+                    <p class="proj-desc">Another rewards &amp; motivation system developed for ONLYM.</p>
+                    <div class="proj-tags"><span>Charts</span><span>iPhone &amp; iPad</span><span>Starscream</span></div>
+                    <a class="proj-link" href="https://apps.apple.com/ru/app/seller-gb/id1572983812" target="_blank" rel="noopener">App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </article>
 
-							<div class="link_button">
-								<a href="https://github.com/IrelDev/SwiftConcurrencyCheatSheet">
-									<center>
-										<img class="img-fluid rounded mb-3 mb-md-0" src="images/icons/Github.png" alt="GitHub" width="120" height="40">
-									</center>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
+                <article class="proj-card reveal" data-cat="app ut swiftui">
+                    <div class="proj-top"><img class="proj-icon" src="images/icons/XcodeCleaner.png" alt="Xcode Cleaner"><div><div class="proj-title">Xcode Cleaner</div><div class="proj-badge">Utility</div></div></div>
+                    <p class="proj-desc">Analyze and free up disk space used by Xcode cache files.</p>
+                    <div class="proj-tags"><span>SwiftUI</span><span>MVVM</span><span>CoreData</span></div>
+                    <a class="proj-link" href="https://github.com/IrelDev/XcodeCleaner" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </article>
 
-				<div class="dep swiftui col-lg-4 col-md-5 col-sm-12 portfolio-item">
-					<div class="card h-100">
-						<a href="https://github.com/IrelDev/PieChartSwiftUI">
-							<img class="card-img-top" src="images/icons/PieChart.png" alt="Pie Chart">
-						</a>
-						<div class="card-body">
-							<h4 class="card-title">
-								<center>
-									<h4 class="card-title">Pie Chart</h4>
-								</center>
-							</h4>
-							<center>
-								<p>Create pie charts based on custom slices or data arrays.</p>
-							</center>
-							<div class="align-items-center d-flex", style="height: 40%">
-							<ul style="list-style-type:square">
-								<li><span style="color: red;">DEPRECATED</span></li>
-								<li>SwiftUI</li>
-								<li>Cocoapods</li>
-								<li>Carthage</li>
-							</ul>
-						</div>
+                <article class="proj-card reveal" data-cat="app ut swiftui">
+                    <div class="proj-top"><img class="proj-icon" src="images/icons/TabBarIconGenerator.png" alt="Tab Bar Icon Generator"><div><div class="proj-title">Tab Bar Icon Generator</div><div class="proj-badge">Utility</div></div></div>
+                    <p class="proj-desc">Generate a custom tab-bar icon imageset from any source image.</p>
+                    <div class="proj-tags"><span>SwiftUI</span><span>AppKit</span><span>MVP</span></div>
+                    <a class="proj-link" href="https://github.com/IrelDev/TabBarIconGenerator" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </article>
 
-							<div class="link_button">
-								<a href="https://github.com/IrelDev/PieChartSwiftUI">
-									<center>
-										<img class="img-fluid rounded mb-3 mb-md-0" src="images/icons/Github.png" alt="GitHub" width="120" height="40">
-									</center>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
+                <article class="proj-card reveal" data-cat="dep uikit">
+                    <div class="proj-top"><img class="proj-icon" src="images/icons/TelegramColorPicker.png" alt="Telegram Color Picker"><div><div class="proj-title">Telegram Color Picker</div><div class="proj-badge">Open Source</div></div></div>
+                    <p class="proj-desc">A Telegram-style color picker component for iOS.</p>
+                    <div class="proj-tags"><span>UIKit</span><span>SPM</span><span>Cocoapods</span></div>
+                    <a class="proj-link" href="https://github.com/IrelDev/TelegramColorPicker" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </article>
 
-				</div>
-			</div>
-		</div>
-	</body>
-	<div class="footer-margin"></div>
-	<div class="footer-bottom">
-		<p class="m-0 text-center text-white"><a>© </a><script>document.write(new Date().getFullYear())</script></p>
-	</div>
+                <article class="proj-card reveal" data-cat="dep uikit">
+                    <div class="proj-top"><img class="proj-icon" src="images/icons/BottomSheet.png" alt="Bottom Sheet"><div><div class="proj-title">Bottom Sheet</div><div class="proj-badge">Open Source</div></div></div>
+                    <p class="proj-desc">A draggable bottom sheet that can contain any view controller.</p>
+                    <div class="proj-tags"><span>UIKit</span><span>SPM</span><span>Carthage</span></div>
+                    <a class="proj-link" href="https://github.com/IrelDev/BottomSheet" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </article>
+
+                <article class="proj-card reveal" data-cat="dep uikit">
+                    <div class="proj-top"><img class="proj-icon" src="images/icons/XcodeMVP-CTemplates.png" alt="Xcode MVP-C Templates"><div><div class="proj-title">Xcode MVP-C Templates</div><div class="proj-badge">Open Source</div></div></div>
+                    <p class="proj-desc">Xcode templates to scaffold MVP-C iOS applications.</p>
+                    <div class="proj-tags"><span>UIKit</span><span>.xctemplate</span></div>
+                    <a class="proj-link" href="https://github.com/IrelDev/Xcode-MVP-C-Templates" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </article>
+
+                <article class="proj-card reveal" data-cat="app uikit">
+                    <div class="proj-top"><img class="proj-icon" src="images/icons/CoronavirusStatistics.png" alt="Coronavirus Statistics"><div><div class="proj-title">Coronavirus Statistics</div><div class="proj-badge">App</div></div></div>
+                    <p class="proj-desc">Track the latest case and recovery statistics in real time.</p>
+                    <div class="proj-tags"><span>UIKit</span><span>MVC</span><span>Networking</span></div>
+                    <a class="proj-link" href="https://github.com/IrelDev/CoronavirusStatistics" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </article>
+
+                <article class="proj-card reveal" data-cat="uikit">
+                    <div class="proj-top"><img class="proj-icon" src="images/icons/ProperWayToDownloadAnImage.png" alt="Proper Image Downloading"><div><div class="proj-title">Proper Image Downloading</div><div class="proj-badge">Sample</div></div></div>
+                    <p class="proj-desc">A reference for proper image downloading &amp; caching using Operations.</p>
+                    <div class="proj-tags"><span>UIKit</span><span>Operations</span><span>GCD</span></div>
+                    <a class="proj-link" href="https://github.com/IrelDev/ProperWayToDownloadAnImage" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </article>
+
+                <article class="proj-card reveal" data-cat="">
+                    <div class="proj-top"><img class="proj-icon" src="images/icons/SwiftConcurrencyCheatSheet.png" alt="Concurrency In Swift"><div><div class="proj-title">Concurrency In Swift</div><div class="proj-badge">Resource</div></div></div>
+                    <p class="proj-desc">A curated set of notes and code snippets about concurrency in Swift.</p>
+                    <div class="proj-tags"><span>GCD</span><span>Operations</span><span>Playground</span></div>
+                    <a class="proj-link" href="https://github.com/IrelDev/SwiftConcurrencyCheatSheet" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </article>
+
+                <article class="proj-card reveal" data-cat="dep swiftui">
+                    <div class="proj-top"><img class="proj-icon" src="images/icons/PieChart.png" alt="Pie Chart"><div><div class="proj-title">Pie Chart</div><div class="proj-badge">Open Source</div></div></div>
+                    <p class="proj-desc">Create pie charts from custom slices or data arrays. <span class="deprecated">Deprecated</span></p>
+                    <div class="proj-tags"><span>SwiftUI</span><span>Cocoapods</span><span>Carthage</span></div>
+                    <a class="proj-link" href="https://github.com/IrelDev/PieChartSwiftUI" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" style="background:var(--bg-elevated);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+        <div class="wrap">
+            <div class="eyebrow reveal">Education</div>
+            <h2 class="section-title reveal">Degrees &amp; certifications.</h2>
+            <p class="section-sub reveal">A foundation in computer science, continually sharpened with focused training.</p>
+
+            <div class="edu-grid">
+                <div class="edu-card reveal">
+                    <div class="yr">2021 — 2024</div>
+                    <h3>B.S. in Computer Science</h3>
+                    <div class="place">University of the People · California, United States</div>
+                    <p>WSCUC-accredited bachelor's degree in Computer Science, completed alongside full-time engineering work.</p>
+                    <a class="doc-link" href="images/documents/UOPEOPLE Degree.pdf" target="_blank" rel="noopener">View diploma <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </div>
+                <div class="edu-card reveal">
+                    <div class="yr">2017 — 2021</div>
+                    <h3>Associate's in Computer Science</h3>
+                    <div class="place">Ural Radio Engineering College · Yekaterinburg, Russia</div>
+                    <p>U.S. course-by-course evaluation: 60.25 credits, 3.18 CGPA. Top grades in iOS engineering and diploma practice.</p>
+                    <a class="doc-link" href="images/documents/Course-by-Course US Evaluation (ENG).pdf" target="_blank" rel="noopener">View U.S. evaluation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </div>
+            </div>
+
+            <div class="cert-section">
+                <h3 class="sub reveal">Certifications &amp; professional development</h3>
+                <div class="cert-grid">
+                    <a class="cert reveal" href="images/documents/ODBC-GradCertificateIAI.png" target="_blank" rel="noopener"><span class="ci">AI</span><div><div class="ct">Apple Intelligence On-Demand Bootcamp</div><div class="cm">Kodeco · 2025</div></div></a>
+                    <a class="cert reveal" href="images/documents/Building AI.png" target="_blank" rel="noopener"><span class="ci">AI</span><div><div class="ct">Building AI</div><div class="cm">University of Helsinki · 2023</div></div></a>
+                    <a class="cert reveal" href="images/documents/iOS Combine Framework.png" target="_blank" rel="noopener"><span class="ci">⌘</span><div><div class="ct">Combine Framework in iOS</div><div class="cm">Udemy · 2022</div></div></a>
+                    <a class="cert reveal" href="images/documents/Unit Testing.png" target="_blank" rel="noopener"><span class="ci">✓</span><div><div class="ct">Unit Testing in Swift</div><div class="cm">Udemy · 2022</div></div></a>
+                    <a class="cert reveal" href="images/documents/Cisco Cybersecurity.png" target="_blank" rel="noopener"><span class="ci">C</span><div><div class="ct">CCNA &amp; Cybersecurity</div><div class="cm">Cisco · 2017—2019</div></div></a>
+                    <a class="cert reveal" href="images/documents/Cisco IT Essentials.png" target="_blank" rel="noopener"><span class="ci">C</span><div><div class="ct">IT Essentials</div><div class="cm">Cisco · 2018</div></div></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+        <div class="wrap">
+            <div class="contact-card reveal">
+                <h2>Let's build something great.</h2>
+                <p>I'm open to Senior iOS roles and happy to relocate within the U.S. The fastest way to reach me is email.</p>
+                <div class="contact-primary">
+                    <a class="btn btn-primary" href="mailto:kpustovalov.main@gmail.com">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                        kpustovalov.main@gmail.com
+                    </a>
+                </div>
+                <div class="socials">
+                    <a class="social-btn" href="https://www.linkedin.com/in/pustovalov-dev" target="_blank" rel="noopener"><img src="images/icons/LinkedIn.svg" alt="">LinkedIn</a>
+                    <a class="social-btn" href="https://github.com/ireldev" target="_blank" rel="noopener"><img src="images/icons/Github.svg" alt="">GitHub</a>
+                    <a class="social-btn" href="https://stackoverflow.com/users/12517479/ireldev" target="_blank" rel="noopener"><img src="images/icons/StackOverflow.svg" alt="">Stack Overflow</a>
+                    <a class="social-btn" href="https://t.me/ireldev" target="_blank" rel="noopener"><img src="images/icons/Telegram.svg" alt="">Telegram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap foot-inner">
+            <div>© <span id="year"></span> Kirill Pustovalov · Senior iOS Software Engineer</div>
+            <div><a href="#top">Back to top ↑</a></div>
+        </div>
+    </footer>
+
+    <script>
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Theme toggle
+        var toggle = document.getElementById('themeToggle');
+        toggle.addEventListener('click', function () {
+            var cur = document.documentElement.getAttribute('data-theme');
+            var next = cur === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            try { localStorage.setItem('theme', next); } catch (e) {}
+            document.querySelector('meta[name=theme-color]').setAttribute('content', next === 'dark' ? '#000000' : '#fbfbfd');
+        });
+
+        // Mobile nav
+        var navToggle = document.getElementById('navToggle');
+        var navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', function () { navLinks.classList.toggle('open'); });
+        navLinks.querySelectorAll('a').forEach(function (a) {
+            a.addEventListener('click', function () { navLinks.classList.remove('open'); });
+        });
+
+        // Project filtering
+        var filters = document.getElementById('filters');
+        var cards = Array.prototype.slice.call(document.querySelectorAll('#projGrid .proj-card'));
+        filters.addEventListener('click', function (e) {
+            var btn = e.target.closest('.filter-pill');
+            if (!btn) return;
+            filters.querySelectorAll('.filter-pill').forEach(function (p) { p.classList.remove('active'); });
+            btn.classList.add('active');
+            var f = btn.getAttribute('data-filter');
+            cards.forEach(function (c) {
+                var cats = c.getAttribute('data-cat') || '';
+                var show = f === 'all' || cats.split(' ').indexOf(f) !== -1;
+                c.classList.toggle('hide', !show);
+            });
+        });
+
+        // Reveal on scroll
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+                if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(function (el, i) {
+            el.style.transitionDelay = Math.min(i % 6 * 0.05, 0.3) + 's';
+            io.observe(el);
+        });
+    </script>
+</body>
 </html>
