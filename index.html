@@ -111,21 +111,21 @@
 
         .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 
-        section { padding: 100px 0; }
+        section { padding: clamp(60px, 8vw, 100px) 0; }
         section.band { background: var(--band); }
-        @media (max-width: 720px) { section { padding: 68px 0; } }
 
-        .section-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+        .section-head { text-align: center; max-width: 720px; margin: 0 auto clamp(34px, 5vw, 56px); }
         .eyebrow {
             display: block;
             font-size: 15px; font-weight: 600; letter-spacing: -0.01em;
             color: var(--link); margin-bottom: 10px;
         }
         h2.section-title {
-            font-size: clamp(32px, 5vw, 52px); font-weight: 700;
+            font-size: clamp(29px, 5vw, 52px); font-weight: 700;
             letter-spacing: -0.028em; line-height: 1.06; margin-bottom: 14px;
+            text-wrap: balance;
         }
-        .section-sub { color: var(--text-secondary); font-size: 19px; letter-spacing: -0.014em; }
+        .section-sub { color: var(--text-secondary); font-size: clamp(16px, 1.6vw, 19px); letter-spacing: -0.014em; text-wrap: pretty; }
 
         /* ===== NAV ===== */
         nav.topbar {
@@ -192,12 +192,21 @@
         .link-cta svg { display: none; }
 
         /* ===== HERO ===== */
-        .hero { padding-top: 140px; padding-bottom: 88px; text-align: center; }
+        .hero { padding-top: clamp(96px, 11vw, 136px); padding-bottom: clamp(56px, 7vw, 88px); text-align: center; }
         .status-chip {
-            display: inline-flex; align-items: center; gap: 8px;
+            display: inline-flex; align-items: center; gap: 9px;
             background: var(--tile);
             padding: 7px 16px; border-radius: 980px; font-size: 13px; font-weight: 500;
-            color: var(--text-secondary); margin-bottom: 30px;
+            color: var(--text-secondary); margin-bottom: 26px;
+            max-width: 100%; text-align: left;
+        }
+        .status-chip .pulse { flex-shrink: 0; }
+        .status-chip .nowrap { white-space: nowrap; }
+        @media (max-width: 460px) {
+            .status-chip { align-items: flex-start; border-radius: 20px; padding: 9px 16px; line-height: 1.4; }
+            .status-chip .pulse { margin-top: 5px; }
+            .status-chip .sep { display: none; }
+            .status-chip .nowrap { display: block; }
         }
         [data-theme="dark"] .status-chip { background: var(--card); }
         .status-chip .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 rgba(52,199,89,0.45); animation: pulse 2s infinite; }
@@ -205,16 +214,17 @@
         @media (prefers-reduced-motion: reduce) { .status-chip .pulse { animation: none; } }
 
         .hero h1 {
-            font-size: clamp(46px, 8vw, 92px); font-weight: 700; line-height: 1.02;
+            font-size: clamp(40px, 8vw, 92px); font-weight: 700; line-height: 1.02;
             letter-spacing: -0.03em; margin-bottom: 12px;
         }
         .hero .role {
-            font-size: clamp(21px, 3vw, 30px); font-weight: 600; color: var(--text-secondary);
-            letter-spacing: -0.02em; margin-bottom: 24px;
+            font-size: clamp(19px, 3vw, 30px); font-weight: 600; color: var(--text-secondary);
+            letter-spacing: -0.02em; margin-bottom: clamp(18px, 2.4vw, 24px);
         }
         .hero .lead {
-            font-size: 19px; color: var(--text-secondary); max-width: 700px;
-            margin: 0 auto 32px; letter-spacing: -0.014em; line-height: 1.5;
+            font-size: clamp(16.5px, 1.7vw, 19px); color: var(--text-secondary); max-width: 700px;
+            margin: 0 auto clamp(26px, 3.2vw, 32px); letter-spacing: -0.014em; line-height: 1.5;
+            text-wrap: pretty;
         }
         .hero-cta { display: flex; flex-wrap: wrap; gap: 14px 28px; justify-content: center; align-items: center; margin-bottom: 26px; }
         .hero-meta { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: center; color: var(--text-tertiary); font-size: 13.5px; }
@@ -224,10 +234,10 @@
         /* ===== STATS ===== */
         .stats {
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
-            max-width: 940px; margin: 72px auto 0; text-align: center;
+            max-width: 940px; margin: clamp(44px, 6vw, 72px) auto 0; text-align: center;
         }
-        @media (max-width: 860px) { .stats { grid-template-columns: repeat(2, 1fr); gap: 32px 18px; } }
-        .stat .num { font-size: clamp(32px, 4vw, 44px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; }
+        @media (max-width: 860px) { .stats { grid-template-columns: repeat(2, 1fr); gap: 30px 16px; } }
+        .stat .num { font-size: clamp(30px, 4vw, 44px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; }
         .stat:nth-child(1) .num { color: var(--blue); }
         .stat:nth-child(2) .num { color: var(--green); }
         .stat:nth-child(3) .num { color: var(--orange); }
@@ -237,11 +247,11 @@
         /* ===== EXPERIENCE ===== */
         .xp-card {
             background: var(--card); border-radius: var(--radius);
-            padding: 32px; margin-bottom: 20px; box-shadow: var(--card-shadow);
+            padding: clamp(22px, 3vw, 32px); margin-bottom: 18px; box-shadow: var(--card-shadow);
             transition: box-shadow 0.3s ease;
         }
         .xp-card:hover { box-shadow: var(--card-shadow-hover); }
-        .xp-head { display: flex; align-items: flex-start; gap: 18px; flex-wrap: wrap; }
+        .xp-head { display: flex; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
         .logo-badge {
             width: 54px; height: 54px; border-radius: 14px; flex-shrink: 0;
             display: grid; place-items: center; color: #fff; font-weight: 600; font-size: 22px;
@@ -250,14 +260,17 @@
         .logo-badge.c-orange { background: var(--orange); }
         .logo-badge.c-purple { background: var(--purple); }
         .logo-badge.c-teal { background: var(--teal); }
-        .xp-headtext { flex: 1; min-width: 200px; }
-        .xp-company { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; }
+        .xp-headtext { flex: 1; min-width: 160px; }
+        .xp-company { font-size: clamp(19px, 2.1vw, 21px); font-weight: 700; letter-spacing: -0.02em; }
         .xp-role { color: var(--text-secondary); font-weight: 500; font-size: 15px; margin-top: 2px; }
         .xp-meta { text-align: right; color: var(--text-tertiary); font-size: 13.5px; line-height: 1.7; }
-        @media (max-width: 620px) { .xp-meta { text-align: left; width: 100%; } }
+        @media (max-width: 620px) {
+            .xp-meta { text-align: left; width: 100%; margin-top: 12px; line-height: 1.55; }
+            .logo-badge { width: 46px; height: 46px; border-radius: 12px; font-size: 19px; }
+        }
         .xp-meta .when { font-weight: 600; color: var(--text-secondary); display: block; }
         .xp-bullets { list-style: none; margin-top: 20px; display: grid; gap: 11px; }
-        .xp-bullets li { position: relative; padding-left: 24px; color: var(--text-secondary); font-size: 15.5px; line-height: 1.5; letter-spacing: -0.01em; }
+        .xp-bullets li { position: relative; padding-left: 24px; color: var(--text-secondary); font-size: clamp(14.5px, 1.6vw, 15.5px); line-height: 1.5; letter-spacing: -0.01em; }
         .xp-bullets li::before {
             content: ""; position: absolute; left: 3px; top: 8.5px; width: 6px; height: 6px;
             border-radius: 50%; background: var(--blue); opacity: 0.9;
@@ -274,7 +287,7 @@
         @media (max-width: 560px) { .skill-grid { grid-template-columns: 1fr; } }
         .skill-group {
             background: var(--tile); border-radius: var(--radius);
-            padding: 26px;
+            padding: clamp(20px, 2.6vw, 26px);
         }
         .skill-group h3 { font-size: 16px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 16px; display: flex; align-items: center; gap: 11px; }
         .skill-group .ico { width: 32px; height: 32px; border-radius: 9px; display: grid; place-items: center; color: #fff; flex-shrink: 0; }
@@ -293,10 +306,16 @@
         [data-theme="dark"] .chip { background: #2c2c2e; }
 
         /* ===== PROJECTS ===== */
-        .filters-scroll { display: flex; margin-bottom: 40px; overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 2px; }
+        .filters-scroll {
+            display: flex; justify-content: center; justify-content: safe center;
+            margin-bottom: clamp(28px, 3.6vw, 40px); overflow-x: auto;
+            -webkit-overflow-scrolling: touch; padding: 2px;
+            scrollbar-width: none;
+        }
+        .filters-scroll::-webkit-scrollbar { display: none; }
         .filters {
             display: inline-flex; gap: 2px; background: var(--control);
-            border-radius: 12px; padding: 3px; flex-shrink: 0; margin: 0 auto;
+            border-radius: 12px; padding: 3px; flex-shrink: 0;
         }
         .filter-pill {
             background: transparent; border: none; color: var(--text-secondary);
@@ -312,7 +331,7 @@
         @media (max-width: 560px) { .proj-grid { grid-template-columns: 1fr; } }
         .proj-card {
             background: var(--card); border-radius: var(--radius);
-            padding: 24px; box-shadow: var(--card-shadow); display: flex; flex-direction: column;
+            padding: clamp(20px, 2.4vw, 24px); box-shadow: var(--card-shadow); display: flex; flex-direction: column;
             transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
         .proj-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
@@ -335,7 +354,7 @@
         /* ===== EDUCATION ===== */
         .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
         @media (max-width: 800px) { .edu-grid { grid-template-columns: 1fr; } }
-        .edu-card { background: var(--tile); border-radius: var(--radius); padding: 30px; }
+        .edu-card { background: var(--tile); border-radius: var(--radius); padding: clamp(22px, 3vw, 30px); }
         .edu-card .yr { font-size: 13.5px; font-weight: 600; color: var(--link); }
         .edu-card h3 { font-size: 20px; font-weight: 700; margin: 8px 0 4px; letter-spacing: -0.02em; }
         .edu-card .place { font-size: 14px; color: var(--text-tertiary); margin-bottom: 12px; }
@@ -344,7 +363,7 @@
         .doc-link::after { content: "›"; font-size: 17px; line-height: 1; margin-left: 2px; }
         .doc-link svg { display: none; }
 
-        .cert-section h3.sub { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; margin: 52px 0 20px; text-align: center; }
+        .cert-section h3.sub { font-size: clamp(18px, 2.1vw, 21px); font-weight: 700; letter-spacing: -0.02em; margin: clamp(36px, 5vw, 52px) 0 20px; text-align: center; }
         .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
         @media (max-width: 860px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 560px) { .cert-grid { grid-template-columns: 1fr; } }
@@ -362,8 +381,8 @@
 
         /* ===== CONTACT ===== */
         .contact-block { text-align: center; max-width: 640px; margin: 0 auto; }
-        .contact-block h2 { font-size: clamp(32px, 5vw, 52px); font-weight: 700; letter-spacing: -0.028em; line-height: 1.06; margin-bottom: 16px; }
-        .contact-block > p { color: var(--text-secondary); font-size: 19px; letter-spacing: -0.014em; margin-bottom: 34px; }
+        .contact-block h2 { font-size: clamp(29px, 5vw, 52px); font-weight: 700; letter-spacing: -0.028em; line-height: 1.06; margin-bottom: 16px; text-wrap: balance; }
+        .contact-block > p { color: var(--text-secondary); font-size: clamp(16px, 1.6vw, 19px); letter-spacing: -0.014em; margin-bottom: clamp(26px, 3.4vw, 34px); text-wrap: pretty; }
         .contact-primary { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 30px; }
         .socials { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
         .social-btn {
@@ -382,10 +401,7 @@
         .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; color: var(--text-tertiary); font-size: 13px; }
         .foot-inner a { color: var(--text-secondary); }
 
-        /* ===== REVEAL ===== */
-        .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
-        .reveal.in { opacity: 1; transform: none; }
-        @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
         .hide { display: none !important; }
     </style>
@@ -416,26 +432,26 @@
     <!-- ===== HERO ===== -->
     <header class="hero" id="top">
         <div class="wrap">
-            <div class="status-chip reveal"><span class="pulse"></span> Open to Senior iOS roles · relocating within the U.S.</div>
-            <h1 class="reveal">Kirill Pustovalov</h1>
-            <p class="role reveal">Senior iOS Software Engineer</p>
-            <p class="lead reveal"><span id="expYears">6+</span> years of experience focused on performance, reliability, and scalable architecture. Drove an award-winning SPM modularization initiative, UIKit to SwiftUI migration, and compile-time DI adoption. Built an in-house trading platform at a major investment broker, delivering 86% faster trading chart rendering and eliminating third-party licensing fees.</p>
-            <div class="hero-cta reveal">
+            <div class="status-chip"><span class="pulse"></span> <span>Open to Senior iOS roles<span class="sep"> · </span><span class="nowrap">relocating within the U.S.</span></span></div>
+            <h1>Kirill Pustovalov</h1>
+            <p class="role">Senior iOS Software Engineer</p>
+            <p class="lead"><span id="expYears">6+</span> years of experience focused on performance, reliability, and scalable architecture. Drove an award-winning SPM modularization initiative, UIKit to SwiftUI migration, and compile-time DI adoption. Built an in-house trading platform at a major investment broker, delivering 86% faster trading chart rendering and eliminating third-party licensing fees.</p>
+            <div class="hero-cta">
                 <a class="btn btn-primary" href="mailto:kpustovalov.main@gmail.com">Get in touch</a>
                 <a class="link-cta" href="https://www.linkedin.com/in/pustovalov-dev" target="_blank" rel="noopener">LinkedIn</a>
                 <a class="link-cta" href="https://github.com/ireldev" target="_blank" rel="noopener">GitHub</a>
             </div>
-            <div class="hero-meta reveal">
+            <div class="hero-meta">
                 <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Charlotte, NC</span>
                 <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> U.S. Permanent Resident</span>
                 <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg> Available now</span>
             </div>
 
             <div class="stats">
-                <div class="stat reveal"><div class="num" id="expYearsStat">6+</div><div class="label">Years of iOS engineering</div></div>
-                <div class="stat reveal"><div class="num">86%</div><div class="label">Faster trading chart rendering</div></div>
-                <div class="stat reveal"><div class="num">Gold</div><div class="label">2026 Stevie® · American Business Awards</div></div>
-                <div class="stat reveal"><div class="num">2.8→4.0+</div><div class="label">App Store rating in 2 months</div></div>
+                <div class="stat"><div class="num" id="expYearsStat">6+</div><div class="label">Years of iOS engineering</div></div>
+                <div class="stat"><div class="num">86%</div><div class="label">Faster trading chart rendering</div></div>
+                <div class="stat"><div class="num">Gold</div><div class="label">2026 Stevie® · American Business Awards</div></div>
+                <div class="stat"><div class="num">2.8→4.0+</div><div class="label">App Store rating in 2 months</div></div>
             </div>
         </div>
     </header>
@@ -444,14 +460,14 @@
     <section id="experience" class="band">
         <div class="wrap">
             <div class="section-head">
-                <div class="eyebrow reveal">Experience</div>
-                <h2 class="section-title reveal">Where I've made an impact.</h2>
-                <p class="section-sub reveal"><span id="expYearsSub">6+</span> years across enterprise finance, climate tech, and consumer apps.</p>
+                <div class="eyebrow">Experience</div>
+                <h2 class="section-title">Where I've made an impact.</h2>
+                <p class="section-sub"><span id="expYearsSub">6+</span> years across enterprise finance, climate tech, and consumer apps.</p>
             </div>
 
             <div class="timeline">
                 <!-- LPL -->
-                <div class="xp-card reveal">
+                <div class="xp-card">
                     <div class="xp-head">
                         <div class="logo-badge c-blue">L</div>
                         <div class="xp-headtext">
@@ -472,7 +488,7 @@
                 </div>
 
                 <!-- Garage IT -->
-                <div class="xp-card reveal">
+                <div class="xp-card">
                     <div class="xp-head">
                         <div class="logo-badge c-orange">G</div>
                         <div class="xp-headtext">
@@ -491,7 +507,7 @@
                 </div>
 
                 <!-- Heads & Hands -->
-                <div class="xp-card reveal">
+                <div class="xp-card">
                     <div class="xp-head">
                         <div class="logo-badge c-purple">H</div>
                         <div class="xp-headtext">
@@ -508,7 +524,7 @@
                 </div>
 
                 <!-- Onlym -->
-                <div class="xp-card reveal">
+                <div class="xp-card">
                     <div class="xp-head">
                         <div class="logo-badge c-teal">O</div>
                         <div class="xp-headtext">
@@ -533,32 +549,32 @@
     <section id="skills">
         <div class="wrap">
             <div class="section-head">
-                <div class="eyebrow reveal">Skills</div>
-                <h2 class="section-title reveal">My toolkit.</h2>
-                <p class="section-sub reveal">The languages, frameworks, and practices I reach for every day.</p>
+                <div class="eyebrow">Skills</div>
+                <h2 class="section-title">My toolkit.</h2>
+                <p class="section-sub">The languages, frameworks, and practices I reach for every day.</p>
             </div>
             <div class="skill-grid">
-                <div class="skill-group reveal">
+                <div class="skill-group">
                     <h3><span class="ico c-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>Languages &amp; UI</h3>
                     <div class="chips"><span class="chip">Swift</span><span class="chip">SwiftUI</span><span class="chip">UIKit</span><span class="chip">WidgetKit</span></div>
                 </div>
-                <div class="skill-group reveal">
+                <div class="skill-group">
                     <h3><span class="ico c-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 9-9M21 12a9 9 0 0 1-9 9"/><path d="M16 7h5V2M8 17H3v5"/></svg></span>Concurrency &amp; Reactive</h3>
                     <div class="chips"><span class="chip">Combine</span><span class="chip">async/await</span><span class="chip">Concurrency</span><span class="chip">RxSwift</span></div>
                 </div>
-                <div class="skill-group reveal">
+                <div class="skill-group">
                     <h3><span class="ico c-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>Architecture</h3>
                     <div class="chips"><span class="chip">SPM</span><span class="chip">Needle (DI)</span><span class="chip">MVVM</span><span class="chip">MVP-C</span><span class="chip">SOLID</span><span class="chip">Design Patterns</span></div>
                 </div>
-                <div class="skill-group reveal">
+                <div class="skill-group">
                     <h3><span class="ico c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span>Data &amp; Networking</h3>
                     <div class="chips"><span class="chip">Core Data</span><span class="chip">WebSockets</span><span class="chip">CommonCrypto</span><span class="chip">Firebase</span></div>
                 </div>
-                <div class="skill-group reveal">
+                <div class="skill-group">
                     <h3><span class="ico c-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span>Testing &amp; Delivery</h3>
                     <div class="chips"><span class="chip">Unit Testing</span><span class="chip">XCTest</span><span class="chip">Git</span><span class="chip">CI/CD</span><span class="chip">Fastlane</span></div>
                 </div>
-                <div class="skill-group reveal">
+                <div class="skill-group">
                     <h3><span class="ico c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 9h6v6H9z"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span>AI &amp; Machine Learning</h3>
                     <div class="chips"><span class="chip">Core ML</span><span class="chip">Create ML</span><span class="chip">Apple Intelligence</span></div>
                 </div>
@@ -570,12 +586,12 @@
     <section id="projects" class="band">
         <div class="wrap">
             <div class="section-head">
-                <div class="eyebrow reveal">Portfolio</div>
-                <h2 class="section-title reveal">Selected work &amp; open source.</h2>
-                <p class="section-sub reveal">Enterprise apps, FinTech platforms, developer tools, and open-source libraries.</p>
+                <div class="eyebrow">Portfolio</div>
+                <h2 class="section-title">Selected work &amp; open source.</h2>
+                <p class="section-sub">Enterprise apps, FinTech platforms, developer tools, and open-source libraries.</p>
             </div>
 
-            <div class="filters-scroll reveal">
+            <div class="filters-scroll">
                 <div class="filters" id="filters">
                     <button class="filter-pill active" data-filter="all">All</button>
                     <button class="filter-pill" data-filter="ent">Enterprise</button>
@@ -588,105 +604,105 @@
             </div>
 
             <div class="proj-grid" id="projGrid">
-                <article class="proj-card reveal" data-cat="app ent swiftui">
+                <article class="proj-card" data-cat="app ent swiftui">
                     <div class="proj-top"><img class="proj-icon" src="images/icons/LPLAccountViewLogo.png" alt="LPL Financial"><div><div class="proj-title">LPL Account View</div><div class="proj-badge">Enterprise</div></div></div>
                     <p class="proj-desc">A simple, convenient way to connect to and monitor your financial accounts.</p>
                     <div class="proj-tags"><span>MVVM</span><span>SwiftUI</span><span>async/await</span></div>
                     <a class="proj-link" href="https://apps.apple.com/us/app/lpl-account-view/id1397972267" target="_blank" rel="noopener">App Store</a>
                 </article>
 
-                <article class="proj-card reveal" data-cat="app ent uikit">
+                <article class="proj-card" data-cat="app ent uikit">
                     <div class="proj-top"><img class="proj-icon" src="images/icons/GarageIT.png" alt="Garage IT"><div><div class="proj-title">Garage IT</div><div class="proj-badge">Enterprise</div></div></div>
                     <p class="proj-desc">International financial ecosystem and multi-asset investment broker.</p>
                     <div class="proj-tags"><span>Combine</span><span>MVVM</span><span>UIKit</span></div>
                     <a class="proj-link" href="https://gara.ge" target="_blank" rel="noopener">Website</a>
                 </article>
 
-                <article class="proj-card reveal" data-cat="app ent uikit">
+                <article class="proj-card" data-cat="app ent uikit">
                     <div class="proj-top"><img class="proj-icon" src="images/icons/MYBOX.png" alt="Mybox"><div><div class="proj-title">Mybox</div><div class="proj-badge">Enterprise</div></div></div>
                     <p class="proj-desc">Food delivery app for MB-Group, developed at Heads &amp; Hands.</p>
                     <div class="proj-tags"><span>Push Notifications</span><span>node-apn</span></div>
                     <a class="proj-link" href="https://apps.apple.com/ru/app/mybox-%D1%81%D1%83%D1%88%D0%B8-%D1%80%D0%BE%D0%BB%D0%BB%D1%8B-%D0%B8-wok/id1167100370?l=en" target="_blank" rel="noopener">App Store</a>
                 </article>
 
-                <article class="proj-card reveal" data-cat="app ent uikit">
+                <article class="proj-card" data-cat="app ent uikit">
                     <div class="proj-top"><img class="proj-icon" src="images/icons/Rusklimat.png" alt="Rusklimat"><div><div class="proj-title">Rusklimat</div><div class="proj-badge">Enterprise</div></div></div>
                     <p class="proj-desc">B2B climate-technology app developed at Heads &amp; Hands.</p>
                     <div class="proj-tags"><span>eCommerce</span><span>CI/CD</span></div>
                     <a class="proj-link" href="https://apps.apple.com/ru/app/русклимат/id1498735129" target="_blank" rel="noopener">App Store</a>
                 </article>
 
-                <article class="proj-card reveal" data-cat="app ent uikit">
+                <article class="proj-card" data-cat="app ent uikit">
                     <div class="proj-top"><img class="proj-icon" src="images/icons/Gildbakaley.png" alt="Gildbakaley"><div><div class="proj-title">Gildbakaley</div><div class="proj-badge">Enterprise</div></div></div>
                     <p class="proj-desc">Rewards &amp; motivation system developed for ONLYM.</p>
                     <div class="proj-tags"><span>WidgetKit</span><span>iPhone &amp; iPad</span><span>MessageKit</span></div>
                     <a class="proj-link" href="https://apps.apple.com/ru/app/gildbakaley/id1487775219" target="_blank" rel="noopener">App Store</a>
                 </article>
 
-                <article class="proj-card reveal" data-cat="app ent uikit">
+                <article class="proj-card" data-cat="app ent uikit">
                     <div class="proj-top"><img class="proj-icon" src="images/icons/SELLERGB.png" alt="SELLER GB"><div><div class="proj-title">SELLER GB</div><div class="proj-badge">Enterprise</div></div></div>
                     <p class="proj-desc">Another rewards &amp; motivation system developed for ONLYM.</p>
                     <div class="proj-tags"><span>Charts</span><span>iPhone &amp; iPad</span><span>Starscream</span></div>
                     <a class="proj-link" href="https://apps.apple.com/ru/app/seller-gb/id1572983812" target="_blank" rel="noopener">App Store</a>
                 </article>
 
-                <article class="proj-card reveal" data-cat="app ut swiftui">
+                <article class="proj-card" data-cat="app ut swiftui">
                     <div class="proj-top"><img class="proj-icon" src="images/icons/XcodeCleaner.png" alt="Xcode Cleaner"><div><div class="proj-title">Xcode Cleaner</div><div class="proj-badge">Utility</div></div></div>
                     <p class="proj-desc">Analyze and free up disk space used by Xcode cache files.</p>
                     <div class="proj-tags"><span>SwiftUI</span><span>MVVM</span><span>CoreData</span></div>
                     <a class="proj-link" href="https://github.com/IrelDev/XcodeCleaner" target="_blank" rel="noopener">GitHub</a>
                 </article>
 
-                <article class="proj-card reveal" data-cat="app ut swiftui">
+                <article class="proj-card" data-cat="app ut swiftui">
                     <div class="proj-top"><img class="proj-icon" src="images/icons/TabBarIconGenerator.png" alt="Tab Bar Icon Generator"><div><div class="proj-title">Tab Bar Icon Generator</div><div class="proj-badge">Utility</div></div></div>
                     <p class="proj-desc">Generate a custom tab-bar icon imageset from any source image.</p>
                     <div class="proj-tags"><span>SwiftUI</span><span>AppKit</span><span>MVP</span></div>
                     <a class="proj-link" href="https://github.com/IrelDev/TabBarIconGenerator" target="_blank" rel="noopener">GitHub</a>
                 </article>
 
-                <article class="proj-card reveal" data-cat="dep uikit">
+                <article class="proj-card" data-cat="dep uikit">
                     <div class="proj-top"><img class="proj-icon" src="images/icons/TelegramColorPicker.png" alt="Telegram Color Picker"><div><div class="proj-title">Telegram Color Picker</div><div class="proj-badge">Open Source</div></div></div>
                     <p class="proj-desc">A Telegram-style color picker component for iOS.</p>
                     <div class="proj-tags"><span>UIKit</span><span>SPM</span><span>Cocoapods</span></div>
                     <a class="proj-link" href="https://github.com/IrelDev/TelegramColorPicker" target="_blank" rel="noopener">GitHub</a>
                 </article>
 
-                <article class="proj-card reveal" data-cat="dep uikit">
+                <article class="proj-card" data-cat="dep uikit">
                     <div class="proj-top"><img class="proj-icon" src="images/icons/BottomSheet.png" alt="Bottom Sheet"><div><div class="proj-title">Bottom Sheet</div><div class="proj-badge">Open Source</div></div></div>
                     <p class="proj-desc">A draggable bottom sheet that can contain any view controller.</p>
                     <div class="proj-tags"><span>UIKit</span><span>SPM</span><span>Carthage</span></div>
                     <a class="proj-link" href="https://github.com/IrelDev/BottomSheet" target="_blank" rel="noopener">GitHub</a>
                 </article>
 
-                <article class="proj-card reveal" data-cat="dep uikit">
+                <article class="proj-card" data-cat="dep uikit">
                     <div class="proj-top"><img class="proj-icon" src="images/icons/XcodeMVP-CTemplates.png" alt="Xcode MVP-C Templates"><div><div class="proj-title">Xcode MVP-C Templates</div><div class="proj-badge">Open Source</div></div></div>
                     <p class="proj-desc">Xcode templates to scaffold MVP-C iOS applications.</p>
                     <div class="proj-tags"><span>UIKit</span><span>.xctemplate</span></div>
                     <a class="proj-link" href="https://github.com/IrelDev/Xcode-MVP-C-Templates" target="_blank" rel="noopener">GitHub</a>
                 </article>
 
-                <article class="proj-card reveal" data-cat="app uikit">
+                <article class="proj-card" data-cat="app uikit">
                     <div class="proj-top"><img class="proj-icon" src="images/icons/CoronavirusStatistics.png" alt="Coronavirus Statistics"><div><div class="proj-title">Coronavirus Statistics</div><div class="proj-badge">App</div></div></div>
                     <p class="proj-desc">Track the latest case and recovery statistics in real time.</p>
                     <div class="proj-tags"><span>UIKit</span><span>MVC</span><span>Networking</span></div>
                     <a class="proj-link" href="https://github.com/IrelDev/CoronavirusStatistics" target="_blank" rel="noopener">GitHub</a>
                 </article>
 
-                <article class="proj-card reveal" data-cat="uikit">
+                <article class="proj-card" data-cat="uikit">
                     <div class="proj-top"><img class="proj-icon" src="images/icons/ProperWayToDownloadAnImage.png" alt="Proper Image Downloading"><div><div class="proj-title">Proper Image Downloading</div><div class="proj-badge">Sample</div></div></div>
                     <p class="proj-desc">A reference for proper image downloading &amp; caching using Operations.</p>
                     <div class="proj-tags"><span>UIKit</span><span>Operations</span><span>GCD</span></div>
                     <a class="proj-link" href="https://github.com/IrelDev/ProperWayToDownloadAnImage" target="_blank" rel="noopener">GitHub</a>
                 </article>
 
-                <article class="proj-card reveal" data-cat="">
+                <article class="proj-card" data-cat="">
                     <div class="proj-top"><img class="proj-icon" src="images/icons/SwiftConcurrencyCheatSheet.png" alt="Concurrency In Swift"><div><div class="proj-title">Concurrency In Swift</div><div class="proj-badge">Resource</div></div></div>
                     <p class="proj-desc">A curated set of notes and code snippets about concurrency in Swift.</p>
                     <div class="proj-tags"><span>GCD</span><span>Operations</span><span>Playground</span></div>
                     <a class="proj-link" href="https://github.com/IrelDev/SwiftConcurrencyCheatSheet" target="_blank" rel="noopener">GitHub</a>
                 </article>
 
-                <article class="proj-card reveal" data-cat="dep swiftui">
+                <article class="proj-card" data-cat="dep swiftui">
                     <div class="proj-top"><img class="proj-icon" src="images/icons/PieChart.png" alt="Pie Chart"><div><div class="proj-title">Pie Chart</div><div class="proj-badge">Open Source</div></div></div>
                     <p class="proj-desc">Create pie charts from custom slices or data arrays. <span class="deprecated">Deprecated</span></p>
                     <div class="proj-tags"><span>SwiftUI</span><span>Cocoapods</span><span>Carthage</span></div>
@@ -700,20 +716,20 @@
     <section id="education">
         <div class="wrap">
             <div class="section-head">
-                <div class="eyebrow reveal">Education</div>
-                <h2 class="section-title reveal">Degrees &amp; certifications.</h2>
-                <p class="section-sub reveal">A foundation in computer science, continually sharpened with focused training.</p>
+                <div class="eyebrow">Education</div>
+                <h2 class="section-title">Degrees &amp; certifications.</h2>
+                <p class="section-sub">A foundation in computer science, continually sharpened with focused training.</p>
             </div>
 
             <div class="edu-grid">
-                <div class="edu-card reveal">
+                <div class="edu-card">
                     <div class="yr">2021 — 2024</div>
                     <h3>B.S. in Computer Science</h3>
                     <div class="place">University of the People · California, United States</div>
                     <p>WSCUC-accredited bachelor's degree in Computer Science, completed alongside full-time engineering work.</p>
                     <a class="doc-link" href="images/documents/UOPEOPLE Degree.pdf" target="_blank" rel="noopener">View diploma</a>
                 </div>
-                <div class="edu-card reveal">
+                <div class="edu-card">
                     <div class="yr">2017 — 2021</div>
                     <h3>Associate's in Computer Science</h3>
                     <div class="place">Ural Radio Engineering College · Yekaterinburg, Russia</div>
@@ -723,14 +739,14 @@
             </div>
 
             <div class="cert-section">
-                <h3 class="sub reveal">Certifications &amp; professional development</h3>
+                <h3 class="sub">Certifications &amp; professional development</h3>
                 <div class="cert-grid">
-                    <a class="cert reveal" href="images/documents/ODBC-GradCertificateIAI.png" target="_blank" rel="noopener"><span class="ct">Apple Intelligence On-Demand Bootcamp</span><span class="cm">Kodeco · 2025</span></a>
-                    <a class="cert reveal" href="images/documents/Building AI.png" target="_blank" rel="noopener"><span class="ct">Building AI</span><span class="cm">University of Helsinki · 2023</span></a>
-                    <a class="cert reveal" href="images/documents/iOS Combine Framework.png" target="_blank" rel="noopener"><span class="ct">Combine Framework in iOS</span><span class="cm">Udemy · 2022</span></a>
-                    <a class="cert reveal" href="images/documents/Unit Testing.png" target="_blank" rel="noopener"><span class="ct">Unit Testing in Swift</span><span class="cm">Udemy · 2022</span></a>
-                    <a class="cert reveal" href="images/documents/Cisco Cybersecurity.png" target="_blank" rel="noopener"><span class="ct">CCNA &amp; Cybersecurity</span><span class="cm">Cisco · 2017—2019</span></a>
-                    <a class="cert reveal" href="images/documents/Cisco IT Essentials.png" target="_blank" rel="noopener"><span class="ct">IT Essentials</span><span class="cm">Cisco · 2018</span></a>
+                    <a class="cert" href="images/documents/ODBC-GradCertificateIAI.png" target="_blank" rel="noopener"><span class="ct">Apple Intelligence On-Demand Bootcamp</span><span class="cm">Kodeco · 2025</span></a>
+                    <a class="cert" href="images/documents/Building AI.png" target="_blank" rel="noopener"><span class="ct">Building AI</span><span class="cm">University of Helsinki · 2023</span></a>
+                    <a class="cert" href="images/documents/iOS Combine Framework.png" target="_blank" rel="noopener"><span class="ct">Combine Framework in iOS</span><span class="cm">Udemy · 2022</span></a>
+                    <a class="cert" href="images/documents/Unit Testing.png" target="_blank" rel="noopener"><span class="ct">Unit Testing in Swift</span><span class="cm">Udemy · 2022</span></a>
+                    <a class="cert" href="images/documents/Cisco Cybersecurity.png" target="_blank" rel="noopener"><span class="ct">CCNA &amp; Cybersecurity</span><span class="cm">Cisco · 2017—2019</span></a>
+                    <a class="cert" href="images/documents/Cisco IT Essentials.png" target="_blank" rel="noopener"><span class="ct">IT Essentials</span><span class="cm">Cisco · 2018</span></a>
                 </div>
             </div>
         </div>
@@ -740,12 +756,12 @@
     <section id="contact" class="band">
         <div class="wrap">
             <div class="contact-block">
-                <h2 class="reveal">Let's build something great.</h2>
-                <p class="reveal">I'm open to Senior iOS roles and happy to relocate within the U.S. The fastest way to reach me is email.</p>
-                <div class="contact-primary reveal">
+                <h2>Let's build something great.</h2>
+                <p>I'm open to Senior iOS roles and happy to relocate within the U.S. The fastest way to reach me is email.</p>
+                <div class="contact-primary">
                     <a class="btn btn-primary" href="mailto:kpustovalov.main@gmail.com">kpustovalov.main@gmail.com</a>
                 </div>
-                <div class="socials reveal">
+                <div class="socials">
                     <a class="social-btn" href="https://www.linkedin.com/in/pustovalov-dev" target="_blank" rel="noopener"><img src="images/icons/LinkedIn.svg" alt="">LinkedIn</a>
                     <a class="social-btn" href="https://github.com/ireldev" target="_blank" rel="noopener"><img src="images/icons/Github.svg" alt="">GitHub</a>
                     <a class="social-btn" href="https://stackoverflow.com/users/12517479/ireldev" target="_blank" rel="noopener"><img src="images/icons/StackOverflow.svg" alt="">Stack Overflow</a>
@@ -806,17 +822,6 @@
                 var show = f === 'all' || cats.split(' ').indexOf(f) !== -1;
                 c.classList.toggle('hide', !show);
             });
-        });
-
-        // Reveal on scroll
-        var io = new IntersectionObserver(function (entries) {
-            entries.forEach(function (en) {
-                if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
-            });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.reveal').forEach(function (el, i) {
-            el.style.transitionDelay = Math.min(i % 6 * 0.05, 0.3) + 's';
-            io.observe(el);
         });
     </script>
 </body>
