@@ -203,7 +203,10 @@
         .status-chip .pulse { flex-shrink: 0; }
         .status-chip .nowrap { white-space: nowrap; }
         @media (max-width: 460px) {
-            .status-chip { align-items: flex-start; border-radius: 20px; padding: 9px 16px; line-height: 1.4; }
+            .status-chip { gap: 8px; padding: 7px 12px; font-size: min(13px, 3.1vw); }
+        }
+        @media (max-width: 359px) {
+            .status-chip { align-items: flex-start; border-radius: 20px; padding: 9px 16px; line-height: 1.4; font-size: 13px; }
             .status-chip .pulse { margin-top: 5px; }
             .status-chip .sep { display: none; }
             .status-chip .nowrap { display: block; }
@@ -228,6 +231,9 @@
         .hero .focus .sep { color: var(--text-tertiary); }
         .hero .focus .nowrap { white-space: nowrap; }
         @media (max-width: 460px) {
+            .hero .focus { font-size: min(15px, 3.95vw); }
+        }
+        @media (max-width: 359px) {
             .hero .focus .sep { display: none; }
             .hero .focus .nowrap { display: block; }
         }
